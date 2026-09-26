@@ -12,6 +12,7 @@ import json
 import math
 import random
 from collections import defaultdict
+from typing import TypedDict, List, Tuple, Dict, Any
 
 random.seed(42)
 
@@ -57,6 +58,18 @@ NEUROPIL_CENTROIDS = {
     "ABDNM": (0.0, -320.0, -25.0),
     "DEFAULT": (0.0, 20.0, 0.0)
 }
+
+class ClusterSpec(TypedDict):
+    name: str
+    role: str
+    count: int
+    target_region: str
+    base_c: Tuple[float, float]
+    zoom: float
+    color: str
+    anchor: Tuple[float, float, float]
+    spread: float
+    target_bio_regions: List[str]
 
 def get_region_centroid(region_name: str, side: str = "right"):
     token = region_name.split(".")[0].split("_")[0]
@@ -152,7 +165,7 @@ def main():
     # 3. Sensory Input / Afferent Wave Receiver (AL/AOTU): 200 neurons
     # 4. Motor Output / Descending Command Transmitter (DN/VNC): 200 neurons
     
-    cluster_specs = [
+    cluster_specs: List[ClusterSpec] = [
         {
             "name": "WERR_CX",
             "role": "central_complex_steering",
@@ -203,23 +216,23 @@ def main():
         }
     ]
 
-    bio_by_region = defaultdict(list)
+    bio_by_region: Dict[str, List[str]] = defaultdict(list)
     for bid, bdata in bio_neurons.items():
-        bio_by_region[bdata["region"]].append(bid)
+        bio_by_region[str(bdata["region"])].append(str(bid))
 
     synth_counter = 0
     for cspec in cluster_specs:
-        prefix = str(cspec["name"])
-        count = int(cspec["count"])
-        anchor = cspec["anchor"]
+        prefix: str = cspec["name"]
+        count: int = cspec["count"]
+        anchor: Tuple[float, float, float] = cspec["anchor"]
         ax, ay, az = float(anchor[0]), float(anchor[1]), float(anchor[2])
-        spread = float(cspec["spread"])
-        base_c = cspec["base_c"]
+        spread: float = float(cspec["spread"])
+        base_c: Tuple[float, float] = cspec["base_c"]
         base_cx, base_cy = float(base_c[0]), float(base_c[1])
-        bzoom = float(cspec["zoom"])
+        bzoom: float = float(cspec["zoom"])
         
         # Candidate biological targets
-        cand_bio_ids = []
+        cand_bio_ids: List[str] = []
         for rk in cspec["target_bio_regions"]:
             cand_bio_ids.extend(bio_by_region.get(rk, []))
         if not cand_bio_ids:
