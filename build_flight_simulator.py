@@ -16,7 +16,7 @@ import os
 import sys
 import json
 
-WORKSPACE = "c:/Users/Lexo/Desktop/werrdevistan"
+WORKSPACE = os.path.abspath(os.path.dirname(__file__))
 DATA_JSON_PATH = os.path.join(WORKSPACE, "neuramap", "bioneural_3d_data.json")
 OUTPUT_HTML_PATH = os.path.join(WORKSPACE, "fly_bioneural_flight_sim.html")
 

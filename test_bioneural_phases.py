@@ -21,7 +21,7 @@ if WERRENGINE_PATH not in sys.path:
 
 import werr
 
-DATA_JSON_PATH = "c:/Users/Lexo/Desktop/werrdevistan/neuramap/bioneural_3d_data.json"
+DATA_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "neuramap", "bioneural_3d_data.json"))
 
 def load_connectome_network():
     if not os.path.exists(DATA_JSON_PATH):

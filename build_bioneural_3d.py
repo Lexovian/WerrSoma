@@ -15,7 +15,7 @@ from collections import defaultdict
 
 random.seed(42)
 
-WORKSPACE = "c:/Users/Lexo/Desktop/werrdevistan"
+WORKSPACE = os.path.abspath(os.path.dirname(__file__))
 NEURONS_CSV = os.path.join(WORKSPACE, "neuramap", "neurons.csv", "neurons.csv")
 CONNECTIONS_CSV = os.path.join(WORKSPACE, "neuramap", "connections_princeton.csv", "connections_princeton.csv")
 

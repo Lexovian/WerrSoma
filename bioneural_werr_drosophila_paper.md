@@ -4,7 +4,7 @@
 **Date:** September 2026  
 **Document Type:** Formal Scientific Research Article (Camera-Ready Specification)  
 **Target Venue:** *Nature Neuroscience* / *IEEE Transactions on Biomedical Engineering (TBME)*  
-**Code & Data Repository:** [werrdevistan](file:///c:/Users/Lexo/Desktop/werrdevistan)  
+**Code & Data Repository:** [WerrSoma](https://github.com/Lexovian/WerrSoma)  
 **Primary Dataset:** Princeton FlyWire Electron Microscopy Whole-Brain Drosophila Connectome (158,262 Neurons, 3,990,039 Synapses)  
 **Coprocessor Engine:** WERR Zero-Memory Fractal Decision Engine (v0.5.0, arXiv:2609.25498)  
 
@@ -130,7 +130,7 @@ $R \in [0, 1]$ serves as the Rayleigh coherence metric; values near $1.0$ indica
 
 ## 3. Experimental Protocols & Empirical Results
 
-All six experimental protocols were executed using the high-performance benchmark suite [run_scientific_experiments.py](file:///c:/Users/Lexo/Desktop/werrdevistan/run_scientific_experiments.py) operating directly upon the 158,262-neuron FlyWire dataset. Telemetry was serialized to [scientific_benchmark_results.json](file:///c:/Users/Lexo/Desktop/werrdevistan/scientific_benchmark_results.json).
+All six experimental protocols were executed using the high-performance benchmark suite [run_scientific_experiments.py](run_scientific_experiments.py) operating directly upon the 158,262-neuron FlyWire dataset. Telemetry was serialized to [scientific_benchmark_results.json](scientific_benchmark_results.json).
 
 ### Summary of Empirical Benchmark Results
 

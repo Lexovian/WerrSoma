@@ -2,7 +2,7 @@
 **Proje Kodu:** `WERR-DROSOPHILA-BIO-CONNECTOME`  
 **Tarih:** 26 Eylül 2026  
 **Durum:** Tamamlandı, Doğrulandı ve Canlı Masaüstü Sistemine Aktarıldı  
-**Çalışma Alanı:** [werrdevistan](file:///c:/Users/Lexo/Desktop/werrdevistan)
+**Çalışma Alanı:** [WerrSoma (GitHub)](https://github.com/Lexovian/WerrSoma)
 
 ---
 
@@ -11,9 +11,9 @@
 Bu projenin temel hedefi; biyolojik bir organizmanın (erkek *Drosophila melanogaster* - meyve sineği) **Princeton FlyWire tam beyin konnektomu** ile matematiksel **WERR (Zero-Memory Fractal Decision Engine)** sentetik nöronlarını birbirine bağlamak, sentetik nöronların biyolojik sinir ağlarıyla uyumluluğunu test etmek ve üretilen fraktal kararların sineğin uçuş motor devrelerini (Central Complex ve Descending Motor Neurons) canlı zamanlı olarak yönlendirebilmesini sağlamaktır.
 
 Çalışma kapsamında iki temel simülatör ve bir kapsamlı iki aşamalı test paketi geliştirilmiştir:
-1. **WebGL / 3D Canlı Web Uçuş Simülatörü:** [fly_bioneural_flight_sim.html](file:///c:/Users/Lexo/Desktop/werrdevistan/fly_bioneural_flight_sim.html) (3.800 Nöron, 16.099 Sinaps, 2.500 Eşzamanlı Aksonal Foton).
-2. **Büyük Ölçekli Python Masaüstü Uygulaması:** [bioneural_fly_app.py](file:///c:/Users/Lexo/Desktop/werrdevistan/bioneural_fly_app.py) (75.000 Nöron, 109.600 Sinaps, Çift 3D Viewport, Gerçek 3D Uçuş Fiziği).
-3. **İki Aşamalı Doğrulama Test Paketi:** [test_bioneural_phases.py](file:///c:/Users/Lexo/Desktop/werrdevistan/test_bioneural_phases.py).
+1. **WebGL / 3D Canlı Web Uçuş Simülatörü:** [fly_bioneural_flight_sim.html](fly_bioneural_flight_sim.html) (3.800 Nöron, 16.099 Sinaps, 2.500 Eşzamanlı Aksonal Foton).
+2. **Büyük Ölçekli Python Masaüstü Uygulaması:** [bioneural_fly_app.py](bioneural_fly_app.py) (75.000 Nöron, 109.600 Sinaps, Çift 3D Viewport, Gerçek 3D Uçuş Fiziği).
+3. **İki Aşamalı Doğrulama Test Paketi:** [test_bioneural_phases.py](test_bioneural_phases.py).
 
 ```mermaid
 graph TD
@@ -81,7 +81,7 @@ $$\frac{dV_m}{dt} = \frac{V_{\text{rest}} - V_m}{\tau_m} + I_{\text{spontaneous}
 
 ---
 
-## 5. İki Aşamalı Entegrasyon Test Sonuçları ([test_bioneural_phases.py](file:///c:/Users/Lexo/Desktop/werrdevistan/test_bioneural_phases.py))
+## 5. İki Aşamalı Entegrasyon Test Sonuçları ([test_bioneural_phases.py](test_bioneural_phases.py))
 
 ### 1. Aşama: Uyumluluk ve Biyolojik Karşıt Tepki Testi
 - **Amaç:** WERR nöronlarından enjekte edilen elektrik akımlarının biyolojik devrelerce kabul edilip edilmediğini ve beynin buna bağışıklık/reddetme tepkisi verip vermediğini ölçmek.
@@ -141,10 +141,10 @@ Kullanıcının *"WERR nöronları normal nöronlara göre daha hızlı olduğun
 
 | Dosya Yolu | Açıklama |
 | :--- | :--- |
-| [bioneural_fly_app.py](file:///c:/Users/Lexo/Desktop/werrdevistan/bioneural_fly_app.py) | **Ana Masaüstü Uygulaması:** 75.000 Nöron, çift 3D viewport, LIF motoru ve WASD override. |
-| [fly_bioneural_flight_sim.html](file:///c:/Users/Lexo/Desktop/werrdevistan/fly_bioneural_flight_sim.html) | **Canlı Web Simülatörü:** 3.800 Nöron, 2.500 aksonal foton, Three.js WebGL arayüzü. |
-| [build_flight_simulator.py](file:///c:/Users/Lexo/Desktop/werrdevistan/build_flight_simulator.py) | Web simülatörünü derleyen ve üreten Python betiği. |
-| [test_bioneural_phases.py](file:///c:/Users/Lexo/Desktop/werrdevistan/test_bioneural_phases.py) | 1. ve 2. Aşama uyumluluk ve motor icra testlerini koşan resmi test paketi. |
-| [bioneural_75k_cache.npz](file:///c:/Users/Lexo/Desktop/werrdevistan/bioneural_75k_cache.npz) | 75.000 nöron ve 109.600 sinapsın 48 ms'de açılmasını sağlayan binary önbellek. |
-| [neuramap/](file:///c:/Users/Lexo/Desktop/werrdevistan/neuramap) | Princeton FlyWire konnektom ham CSV veri havuzu (`neurons.csv`, `connections_princeton.csv`). |
-| [werrengine/](file:///c:/Users/Lexo/Desktop/werrdevistan/werrengine) | Yerel ve air-gapped kurulu WERR fraktal motoru kaynak kodları (`tripod=True`, `resonance`). |
+| [bioneural_fly_app.py](bioneural_fly_app.py) | **Ana Masaüstü Uygulaması:** 75.000 Nöron, çift 3D viewport, LIF motoru ve WASD override. |
+| [fly_bioneural_flight_sim.html](fly_bioneural_flight_sim.html) | **Canlı Web Simülatörü:** 3.800 Nöron, 2.500 aksonal foton, Three.js WebGL arayüzü. |
+| [build_flight_simulator.py](build_flight_simulator.py) | Web simülatörünü derleyen ve üreten Python betiği. |
+| [test_bioneural_phases.py](test_bioneural_phases.py) | 1. ve 2. Aşama uyumluluk ve motor icra testlerini koşan resmi test paketi. |
+| [bioneural_75k_cache.npz](bioneural_75k_cache.npz) | 75.000 nöron ve 109.600 sinapsın 48 ms'de açılmasını sağlayan binary önbellek. |
+| [neuramap/](neuramap/) | Princeton FlyWire konnektom ham CSV veri havuzu (`neurons.csv`, `connections_princeton.csv`). |
+| [werrengine/](werrengine/) | Yerel ve air-gapped kurulu WERR fraktal motoru kaynak kodları (`tripod=True`, `resonance`). |

@@ -1,4 +1,4 @@
-# 🧬 WERROSOPHILA: Bio-Synthetic Neuromorphic Connectome Interfacing
+# 🧬 WerrSoma: Bio-Synthetic Neuromorphic Connectome Interfacing
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
@@ -12,9 +12,9 @@
 
 > **In Silico Integration of a Zero-Memory Fractal Decision Engine (WERR) with the Complete Whole-Brain *Drosophila Melanogaster* Connectome.**
 
-**WERROSOPHILA** couples the complete 158,262-neuron, 3.99-million synapse electron-microscopy biological connectome of the fruit fly (*Drosophila melanogaster*, Princeton FlyWire) with a 1,024-pin implantable **WERR neuromorphic fractal coprocessor**. 
+**WerrSoma** couples the complete 158,262-neuron, 3.99-million synapse electron-microscopy biological connectome of the fruit fly (*Drosophila melanogaster*, Princeton FlyWire) with a 1,024-pin implantable **WERR neuromorphic fractal coprocessor**. 
 
-Rather than deploying heavyweight, power-hungry deep learning models or spiking transformers that suffer from high latency ($15-200\text{ ms}$) and VRAM bloat, WERROSOPHILA utilizes **deterministic chaotic Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$)** to synthesize directional flight decisions and motor overrides in **$< 0.5\text{ ms}$** with **$0\text{ Bytes}$ of VRAM**.
+Rather than deploying heavyweight, power-hungry deep learning models or spiking transformers that suffer from high latency ($15-200\text{ ms}$) and VRAM bloat, WerrSoma utilizes **deterministic chaotic Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$)** to synthesize directional flight decisions and motor overrides in **$< 0.5\text{ ms}$** with **$0\text{ Bytes}$ of VRAM**.
 
 ---
 
@@ -135,7 +135,7 @@ A formal camera-ready research manuscript is included in this repository:
 
 ### Citation
 ```bibtex
-@article{werrosophila2026,
+@article{werrsoma2026,
   title={Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
   author={WERR Bio-Synthetic Systems Group},
   journal={arXiv preprint arXiv:2609.25498},
