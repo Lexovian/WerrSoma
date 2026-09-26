@@ -1,0 +1,53 @@
+# Python virtual environments & caches
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Temporary media & logs
+.tempmediaStorage/
+.system_generated/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Ignore root-level duplicate PDF (tracked in docs/ and zenodo/)
+/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf
+!docs/*.pdf
+!zenodo/*.pdf
+!arxiv/*.zip
+
+# Do not track paper PDFs or generated HTML in git prior to Q1 release
+paper/*.pdf
+paper/*.html
+scratch/
+
+# Sensitive runner scripts and cluster endpoints (STRICTLY EXCLUDED FROM GIT)
+runner/
+private_archive_rsa/
+*ssh*
+*password*
+*.pem
+*.key
+*.env
+
+# Scrap/temporary graphic generation slices
+assets/[0-9A-F][0-9A-F]*.png
+benchmarks/snake/*.gif
+benchmarks/snake/*.mp4
+
+# Private research, roadmap, and RSA working archives (STRICTLY EXCLUDED)
+private_archive*/
+*roadmap*
+*open_problem*
+*rsa*
+
+

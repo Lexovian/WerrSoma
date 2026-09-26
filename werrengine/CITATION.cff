@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software or cite the research, please cite our official arXiv publication."
+authors:
+  - family-names: "Dağlı"
+    given-names: "Volkan"
+    orcid: "https://orcid.org/0009-0000-1587-8703"
+  - family-names: "Dağlı"
+    given-names: "Zerrin"
+    orcid: "https://orcid.org/0000-0001-9490-6425"
+  - family-names: "Dağlı"
+    given-names: "Dağhan"
+    orcid: "https://orcid.org/0009-0003-2492-8313"
+title: "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains"
+version: "1.0.0"
+doi: "10.48550/arXiv.2609.25498"
+date-released: "2026-09-23"
+url: "https://github.com/pCwOrM/werr"
+repository-code: "https://github.com/pCwOrM/werr"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Dağlı"
+      given-names: "Volkan"
+      orcid: "https://orcid.org/0009-0000-1587-8703"
+    - family-names: "Dağlı"
+      given-names: "Zerrin"
+      orcid: "https://orcid.org/0000-0001-9490-6425"
+    - family-names: "Dağlı"
+      given-names: "Dağhan"
+      orcid: "https://orcid.org/0009-0003-2492-8313"
+  title: "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains"
+  journal: "arXiv preprint arXiv:2609.25498"
+  year: 2026
+  eprint: "2609.25498"
+  archivePrefix: "arXiv"
+  primaryClass: "cs.NE"
+  doi: "10.48550/arXiv.2609.25498"
+  url: "https://arxiv.org/abs/2609.25498"

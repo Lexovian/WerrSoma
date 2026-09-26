@@ -1,0 +1,82 @@
+# ==============================================================================
+# WERROSOPHILA: .gitignore
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# C extensions & build artifacts
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs & Editor Configuration
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Test & Coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# Local logs & Temporary debug outputs
+*.log
+out.txt
+err.txt
+*.tmp
+test_err.py
+test_random.py
+
+# Large Datasets exceeding GitHub 100MB file upload limits
+# (The raw FlyWire connections CSV is ~198MB; compiled binary CSR cache .npz is tracked)
+neuramap/connections_princeton.csv/
+neuramap/connections_princeton.csv/**
+
+*.tar.gz
+*.zip
+*.7z
+
+# Telemetry and local offline queues
+~/.werr/
+.werr/
+offline_telemetry.jsonl

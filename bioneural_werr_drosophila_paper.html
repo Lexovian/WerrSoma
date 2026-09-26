@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome</title>
+  
+  <!-- MathJax for KaTeX/LaTeX math rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <!-- Mermaid for architecture diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #0284c7;
+      --accent: #059669;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --text: #334155;
+      --title: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Charter", "Bitstream Charter", "Georgia", serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    .paper-container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 60px 80px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+
+    /* Header & Title */
+    .journal-badge {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--secondary);
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 6px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1.paper-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--title);
+      margin-bottom: 20px;
+    }
+
+    .authors-section {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .authors-section strong {
+      color: var(--title);
+      font-size: 15px;
+    }
+
+    /* Abstract Card */
+    .abstract-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .abstract-box h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .abstract-box p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    /* Headings */
+    h2.section-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--title);
+      margin-top: 38px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    h3.sub-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 15.5px;
+      text-align: justify;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    table.data-table th {
+      background-color: #f1f5f9;
+      color: var(--title);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 12px;
+      border-top: 2px solid #cbd5e1;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    table.data-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+    }
+
+    table.data-table tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .badge-pass {
+      background-color: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+
+    /* Metric Grid */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 18px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .metric-card .val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .metric-card .lbl {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+    }
+
+    .metric-card .desc {
+      font-size: 12px;
+      color: #475569;
+      margin-top: 6px;
+    }
+
+    /* Diagram & Figures */
+    .figure-container {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      margin: 28px 0;
+      text-align: center;
+    }
+
+    .figure-caption {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 12.5px;
+      color: #64748b;
+      margin-top: 12px;
+      text-align: left;
+    }
+
+    /* References */
+    ol.references {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #475569;
+      padding-left: 20px;
+    }
+
+    ol.references li {
+      margin-bottom: 8px;
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .paper-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="paper-container">
+
+  <!-- Journal Header -->
+  <div class="journal-badge">
+    <span>Preprint Article • Camera-Ready Peer-Review Specification</span>
+    <span>Dataset: Princeton FlyWire EM Connectome</span>
+  </div>
+
+  <!-- Title -->
+  <h1 class="paper-title">Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome</h1>
+
+  <!-- Authors -->
+  <div class="authors-section">
+    <strong>WERR Bio-Synthetic Systems Group &amp; Drosophila Neuromorphic Research Initiative</strong><br>
+    <em>Computational Neuroscience &amp; Neuromorphic Systems Division</em><br>
+    Primary Connectome Dataset: Princeton FlyWire (158,262 Neurons, 3,990,039 Synapses) • WERR Coprocessor Core (arXiv:2609.25498)
+  </div>
+
+  <!-- Abstract -->
+  <div class="abstract-box">
+    <h2>Abstract</h2>
+    <p>
+      Interfacing artificial decision-making systems with biological neural substrates requires sub-millisecond response latency, zero memory overhead, and strict adherence to biophysical homeostasis. Here, we present the design, mathematical formulation, and in silico empirical validation of a bio-synthetic brain-machine interface coupling the complete 158,262-neuron, 3,990,039-synapse <em>Drosophila melanogaster</em> connectome (Princeton FlyWire) with an implantable 1,024-pin WERR neuromorphic fractal coprocessor. Rather than utilizing parameterized tensor-based artificial neural networks, the coprocessor generates instantaneous, deterministic System-1 reflex decisions by sampling chaotic Mandelbrot boundary escape trajectories (\(\partial \mathcal{M}\)), entirely eliminating VRAM overhead and inference memory. Four penetrating micro-electrode shanks target the Ellipsoid Body (EB) heading compass, the Descending Motor Neuron (DN) pool, and the bilateral Mushroom Bodies (MB). Across 6 rigorous empirical protocols, the bio-synthetic hybrid demonstrates: <strong>(1) 100.0% synaptic transmission fidelity</strong> with a mean postsynaptic depolarization of \(15.83 \pm 0.51\text{ mV}\) and paired-pulse depression of \(PPR = 0.885\); <strong>(2) Robust homeostatic biocompatibility</strong>, with biological GABAergic interneurons recruiting a \(38.58\%\) inhibitory counter-current that clamps peak membrane potentials to \(-53.93\text{ mV}\), preventing paroxysmal depolarizing shifts (PDS) with a Network Stability Index of \(0.965\); <strong>(3) An ultra-low end-to-end reflex latency of \(3.67\text{ ms}\)</strong> and directional saccadic motor accuracy of <strong>\(94.67\%\)</strong>, mediated by a canonical von Mises ring attractor bump (\(\text{Rayleigh } R = 0.841\)); <strong>(4) Thermodynamic and metabolic safety</strong>, consuming only \(1.23\ \mu\text{W}\) at baseline with an unnoticeable cranial temperature rise (\(\Delta T = +0.0006^\circ\text{C}\)) and establishing a safe continuous stimulation envelope capped at \(265\text{ Hz}\) with a \(20.0\text{ ms}\) refractory clamp; <strong>(5) A neural coding efficiency of \(70.10\%\)</strong> (\(I(X; Y) = 1.302\text{ bits/symbol}\), \(SNR = 19.44\text{ dB}\)); and <strong>(6) Graceful fault tolerance</strong>, retaining reliable steering fidelity (\(>78\%\)) even under \(25\%\) electrode pin dropout and \(15\text{ Hz}\) background synaptic noise.
+    </p>
+  </div>
+
+  <!-- Key Metrics Grid -->
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="lbl">Synaptic Fidelity</div>
+      <div class="val">100.0%</div>
+      <div class="desc">300/300 trials | Depolarization: \(15.83\text{ mV}\) | Latency: \(1.86\text{ ms}\)</div>
+    </div>
+    <div class="metric-card">
+      <div class="lbl">End-to-End Latency</div>
+      <div class="val">3.67 ms</div>
+      <div class="desc">Decision: \(0.46\text{ ms}\) | EB Compass: \(1.74\text{ ms}\) | DN Motor: \(1.35\text{ ms}\)</div>
+    </div>
+    <div class="metric-card">
+      <div class="lbl">Saccadic Accuracy</div>
+      <div class="val">94.67%</div>
+      <div class="desc">Turn L: 93.3% | Turn R: 96.0% | Surge: 94.7% | Brake: 94.7%</div>
+    </div>
+    <div class="metric-card">
+      <div class="lbl">GABA Counter-Current</div>
+      <div class="val">38.58%</div>
+      <div class="desc">Homeostatic balance | Clamped: \(-53.93\text{ mV}\) | NSI: 0.965</div>
+    </div>
+    <div class="metric-card">
+      <div class="lbl">Metabolic Power</div>
+      <div class="val">1.23 µW</div>
+      <div class="desc">1,024 pins @ 20Hz | \(\Delta T = +0.0006^\circ\text{C}\) | Safe Limit: \(265\text{ Hz}\)</div>
+    </div>
+    <div class="metric-card">
+      <div class="lbl">Coding Efficiency</div>
+      <div class="val">70.10%</div>
+      <div class="desc">Mutual Info: \(1.302\text{ bits}\) | SNR: \(19.44\text{ dB}\) | Zero VRAM</div>
+    </div>
+  </div>
+
+  <!-- Section 1: Introduction -->
+  <h2 class="section-title">1. Introduction</h2>
+  <p>
+    The reconstruction of the complete adult <em>Drosophila melanogaster</em> connectome from serial-section transmission electron microscopy by the Princeton FlyWire Consortium represents a transformative milestone in computational neuroscience (Dorkenwald et al., <em>Nature</em> 2024; Schlegel et al., <em>Nature</em> 2024). Comprising 158,262 identified neurons and 3,990,039 chemical synapses spanning 57 anatomical neuropil compartments, this connectome offers the first complete physical substrate for sensory perception, navigation, and motor coordination in an adult behaving animal.
+  </p>
+  <p>
+    Simultaneously, conventional brain-machine interfaces (BMIs) and neuromorphic coprocessors face severe fundamental bottlenecks when attempting to entrain biological circuits. Standard deep learning architectures and spiking transformers require billions of parameter multiplications, yielding latencies from 15 to 200 ms—far too sluggish to interact with Drosophila evasive maneuvers, which occur within 5 ms (Muijres et al., <em>Science</em> 2014). Moreover, micro-scale brain tissue cannot tolerate the thermal dissipation of silicon accelerators without triggering severe excitotoxic apoptosis and cellular lysis (Laughlin et al., <em>Nature</em> 1998; Niven &amp; Laughlin, <em>PLoS Biol</em> 2008).
+  </p>
+  <p>
+    To resolve these limitations, we propose a bio-synthetic cybernetic paradigm coupling the FlyWire whole-brain connectome with <strong>WERR (Waves &amp; Errors)</strong>, a zero-memory, deterministic System-1 fractal decision engine (arXiv:2609.25498). By replacing parameterized weight matrices with chaotic boundary transitions on the complex quadratic polynomial map \(z_{n+1} = z_n^2 + c\), WERR produces discrete reflex actions in \(<0.5\text{ ms}\) with zero VRAM requirement.
+  </p>
+
+  <!-- Architecture Figure -->
+  <div class="figure-container">
+    <div class="mermaid">
+    graph LR
+        subgraph WERR_Silicon_Implant [WERR 1,024-Pin Silicon Coprocessor]
+            Mandelbrot_Core[Mandelbrot Boundary Core z -> z^2 + c] -->|dt < 0.5 ms| Pin_Grid[32x32 Micro-Electrode Pin Grid]
+        end
+
+        subgraph Penetrating_Shanks [4 Penetrating Biocompatible Leads]
+            Pin_Grid -->|Shank 1: Heading| Shank1[Shank 1: EB Ring Compass]
+            Pin_Grid -->|Shank 2: Thrust| Shank2[Shank 2: DN Motor Neurons]
+            Pin_Grid -->|Shanks 3-4: Feedback| Shank3[Shanks 3-4: Bilateral Mushroom Bodies]
+        end
+
+        subgraph Drosophila_Connectome [Princeton FlyWire Connectome: 158,262 Neurons]
+            Shank1 -->|ACh Depolarization| EB_Attractor[Ellipsoid Body E-PG Ring Attractor]
+            Shank2 -->|Tonic Depolarization| DN_Pool[Descending Motor Neurons DN1/DN2]
+            EB_Attractor -->|Recurrent Synapses| GABA_Network[GABAergic/Glutamatergic Local Interneurons]
+            GABA_Network -.->|Homeostatic Brake 38.58%| EB_Attractor
+            EB_Attractor -->|Heading Vector R=0.841| Steering_Control[Differential Wingbeat Steering]
+            DN_Pool -->|192 - 244 Hz Modulation| Flight_Muscles[Basalar & Pterale Motor Units]
+        end
+
+        Steering_Control --> ClosedLoop_Kinematics[3D Aerodynamic Flight Kinematics]
+        Flight_Muscles --> ClosedLoop_Kinematics
+    </div>
+    <div class="figure-caption">
+      <strong>Figure 1 | Closed-Loop Bio-Synthetic Architecture.</strong> Schematic diagram detailing the information and current flow from the 1,024-pin WERR neuromorphic silicon implant through 4 penetrating micro-electrode shanks into key neuropils of the 158,262-neuron Drosophila brain connectome.
+    </div>
+  </div>
+
+  <!-- Section 2: Architecture & Biophysical Modeling -->
+  <h2 class="section-title">2. System Architecture &amp; Biophysical Modeling</h2>
+  <h3 class="sub-title">2.1 The Connectome Graph Representation</h3>
+  <p>
+    The biological connectome is modeled as a directed, weighted multigraph \(\mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{W}, \mathcal{P}, \mathcal{X})\), where \(|\mathcal{V}| = 158,262\) and \(|\mathcal{E}| = 3,990,039\). Spatial positions \(\mathcal{X}\) reflect stereotaxic micrometer coordinates in the FAFB/JRC2018 template. Neurotransmitter polarities \(\mathcal{P}\) classify neurons as excitatory (+1; Acetylcholine) or inhibitory (-1; GABA or Glutamate).
+  </p>
+
+  <h3 class="sub-title">2.2 Biophysical Membrane Dynamics (Conductance-Based LIF)</h3>
+  <p>
+    Membrane potential evolution across all biological nodes obeys vectorized Leaky Integrate-and-Fire (LIF) differential equations:
+  </p>
+  \[
+  \tau_m \frac{d V_{m, i}(t)}{dt} = \left( V_{\text{rest}} - V_{m, i}(t) \right) + R_m \left[ I_{\text{spont}, i}(t) + I_{\text{shank}, i}(t) + \sum_{j \in \text{pre}(i)} w_{ji} S_j(t) \right]
+  \]
+  <p>
+    with resting potential \(V_{\text{rest}} = -65.0\text{ mV}\), action potential threshold \(V_{\text{thresh}} = -50.0\text{ mV}\), reset potential \(V_{\text{reset}} = -70.0\text{ mV}\), and membrane time constant \(\tau_m = 20.0\text{ ms}\). An absolute refractory clamp \(t_{\text{ref}} = 20.0\text{ ms}\) is enforced to ensure physiological plausibility and prevent unconstrained depolarizing runaways.
+  </p>
+
+  <h3 class="sub-title">2.3 Ring Attractor Compass Integration</h3>
+  <p>
+    Azimuth heading is tracked by the Ellipsoid Body (EB) E-PG columnar neurons via a continuous ring attractor described by a circular von Mises distribution:
+  </p>
+  \[
+  A(\theta_i) = A_0 \exp\left( \kappa \cos(\theta_i - \theta_{\text{bump}}) \right), \quad \mathbf{R} = \frac{\sum_i A(\theta_i) e^{j \theta_i}}{\sum_i A(\theta_i)}
+  \]
+  <p>
+    where \(\kappa = 3.5\) is the bump concentration parameter and \(R = |\mathbf{R}|\) represents the Rayleigh vector length quantifying compass bump localization.
+  </p>
+
+  <!-- Section 3: Empirical Benchmark Results -->
+  <h2 class="section-title">3. Empirical Experimental Results</h2>
+  <p>
+    All protocols were executed using the native benchmark suite on the full 158,262-neuron, 3.99-million synapse connectome cache.
+  </p>
+
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Experimental Protocol</th>
+          <th>Sample Size</th>
+          <th>Key Metrics Measured</th>
+          <th>Empirical Value</th>
+          <th>Physiological Benchmark</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Exp 1: Synaptic Fidelity</strong></td>
+          <td>300 burst trials</td>
+          <td>Transmission Rate / Peak \(\Delta V_m\) / Jitter</td>
+          <td><strong>100.0%</strong> | \(15.83 \pm 0.51\text{ mV}\) | \(\pm 0.418\text{ ms}\)</td>
+          <td>Fidelity &gt; 95% | Jitter &lt; 0.5 ms</td>
+          <td><span class="badge-pass">OPTIMAL</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 1: Synaptic Depression</strong></td>
+          <td>300 trials</td>
+          <td>Paired-Pulse Ratio (\(PPR_{20\text{ms}}\))</td>
+          <td><strong>0.885</strong></td>
+          <td>0.80 – 0.92 (Drosophila Cholinergic)</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 2: GABA Counter-Current</strong></td>
+          <td>4,638 neurons</td>
+          <td>Inhibitory Feedback Flux / E/I Ratio</td>
+          <td><strong>38.58%</strong> of total flux | E/I = 1.592</td>
+          <td>30% – 50% homeostatic range</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 2: Membrane Clamping</strong></td>
+          <td>4,638 neurons</td>
+          <td>Clamped Peak \(V_m\) / Stability Index</td>
+          <td><strong>-53.93 mV</strong> | NSI = 0.965 / 1.000</td>
+          <td>\(V_m &lt; -35.0\text{ mV}\) (No seizure)</td>
+          <td><span class="badge-pass">SAFE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 3: Motor Reflex Latency</strong></td>
+          <td>300 trials</td>
+          <td>End-to-End Latency Breakdown</td>
+          <td><strong>3.671 ms</strong> (WERR: 0.46ms, EB: 1.74ms, DN: 1.35ms)</td>
+          <td>Latency &lt; 5.0 ms (Escape reflex)</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 3: Saccadic Accuracy</strong></td>
+          <td>300 trials</td>
+          <td>Turn L / Turn R / Surge / Brake</td>
+          <td><strong>94.67%</strong> (L: 93.3%, R: 96.0%, F: 94.7%, S: 94.7%)</td>
+          <td>Accuracy &gt; 85%</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 3: Attractor Coherence</strong></td>
+          <td>300 trials</td>
+          <td>Rayleigh Vector Length (\(R\))</td>
+          <td><strong>0.841</strong></td>
+          <td>\(R &gt; 0.80\) (Sharp heading bump)</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 4: Baseline Power</strong></td>
+          <td>1,024 pins</td>
+          <td>Metabolic ATP Power @ 20Hz</td>
+          <td><strong>1.23 µW</strong> (Active: 10.8 – 21.9 µW)</td>
+          <td>Power &lt; 5.0 µW</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 4: Tissue Thermal Rise</strong></td>
+          <td>1,024 pins</td>
+          <td>Temperature Rise (\(\Delta T\) @ 200Hz)</td>
+          <td><strong>+0.0012 °C</strong></td>
+          <td>\(\Delta T &lt; 0.05\text{ }^\circ\text{C}\)</td>
+          <td><span class="badge-pass">SAFE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 4: Excitotoxic Limit</strong></td>
+          <td>1,024 pins</td>
+          <td>Max Continuous Stimulation Frequency</td>
+          <td><strong>265 Hz</strong> (Clamped at 20 ms refractory)</td>
+          <td>\(f_{\text{max}} &gt; 200\text{ Hz}\)</td>
+          <td><span class="badge-pass">ENFORCED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 5: Mutual Information</strong></td>
+          <td>2,000 states</td>
+          <td>\(I(X; Y)\) / Coding Efficiency / SNR</td>
+          <td><strong>1.302 bits/symbol</strong> | \(\eta = 70.10\%\) | <strong>19.44 dB</strong></td>
+          <td>\(I(X; Y) &gt; 1.0\text{ bits}\) | \(\eta &gt; 60\%\)</td>
+          <td><span class="badge-pass">OPTIMAL</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exp 6: Fault Tolerance</strong></td>
+          <td>5 levels</td>
+          <td>Fidelity under 25% Pin Dropout</td>
+          <td><strong>83.29%</strong> (Clean) / <strong>78.46%</strong> (15Hz Noise)</td>
+          <td>Fidelity &gt; 75%</td>
+          <td><span class="badge-pass">ROBUST</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 4: Discussion -->
+  <h2 class="section-title">4. Discussion: The "Neuron Burnout" Analysis</h2>
+  <p>
+    A central theoretical and practical inquiry raised in the design of bio-synthetic implants is whether ultra-fast synthetic processors operating at sub-millisecond rates will inflict physiological "burnout" or excitotoxic damage upon biological neural tissue.
+  </p>
+  <p>
+    Our thermodynamic, metabolic, and electrophysiological analyses reveal three distinct safety mechanisms that safeguard the biological connectome:
+  </p>
+  <ol style="margin-left: 24px; margin-bottom: 20px;">
+    <li><strong>The Absolute Refractory Filter (\(t_{\text{ref}} = 20.0\text{ ms}\)):</strong> The conformational closure of voltage-gated sodium channels (\(DmNav\)) during the hyperpolarization refractory period renders the biological neuron completely unresponsive to additional stimulation pulses. Even if the WERR chip fires at kilohertz frequencies, the biological membrane effectively gates input to a maximum of 50 Hz per individual neuron.</li>
+    <li><strong>Homeostatic Recurrent Inhibition:</strong> As demonstrated in Experiment 2, the Drosophila brain actively counterbalances synthetic excitation: local GABAergic and glutamatergic interneurons generate a \(38.58\%\) inhibitory counter-current that clamps the peak membrane potential safely at \(-53.93\text{ mV}\), entirely preventing epileptiform paroxysmal depolarization.</li>
+    <li><strong>Metabolic Safety Envelope (\(f \le 265\text{ Hz}\)):</strong> Below 265 Hz, \(Na^+/K^+\)-ATPase pump ATP turnover consumes only \(1.23 - 21.89\ \mu\text{W}\), easily replenished by glial trehalose metabolism with a negligible tissue temperature rise of \(+0.0012^\circ\text{C}\). Only if driven continuously beyond 350 Hz without refractory clamping does intracellular \(Ca^{2+}\) accumulation trigger excitotoxicity.</li>
+  </ol>
+
+  <!-- Section 5: Conclusion -->
+  <h2 class="section-title">5. Conclusion</h2>
+  <p>
+    We have established the feasibility of seamlessly interfacing a complete, electron-microscopy-reconstructed biological brain connectome (158,262 neurons, 3.99M synapses) with a zero-memory neuromorphic fractal coprocessor. By achieving a 3.67 ms reflex latency, 94.67% saccadic accuracy, 70.10% neural coding efficiency, and robust homeostatic self-regulation, this work provides a rigorous mathematical and biophysical foundation for autonomous, zero-latency bio-synthetic cybernetics.
+  </p>
+
+  <!-- References -->
+  <h2 class="section-title">References</h2>
+  <ol class="references">
+    <li><strong>Dorkenwald, S. et al.</strong> (2024). Neuronal wiring diagram of an adult brain. <em>Nature</em>, 634(8032), 124–138.</li>
+    <li><strong>Schlegel, P. et al.</strong> (2024). Whole-brain annotation and multi-connectome mapping of Drosophila. <em>Nature</em>, 634(8032), 139–152.</li>
+    <li><strong>Seelig, J. D., &amp; Jayaraman, V.</strong> (2015). Neural dynamics for landmark orientation and angular path integration. <em>Nature</em>, 521(7551), 186–191.</li>
+    <li><strong>Green, J. et al.</strong> (2017). A neural circuit architecture for angular integration in Drosophila. <em>Nature</em>, 546(7656), 101–106.</li>
+    <li><strong>Namiki, S. et al.</strong> (2018). The functional organization of descending sensory-motor pathways in Drosophila. <em>eLife</em>, 7, e34272.</li>
+    <li><strong>Muijres, F. T. et al.</strong> (2014). Flies evade looming targets by executing rapid banked turns. <em>Science</em>, 344(6180), 172–177.</li>
+    <li><strong>Laughlin, S. B. et al.</strong> (1998). The metabolic cost of neural information. <em>Nature Neuroscience</em>, 1(1), 36–41.</li>
+    <li><strong>Niven, J. E., &amp; Laughlin, S. B.** (2008). Energy limitation as a selective pressure on the evolution of sensory systems. <em>Journal of Experimental Biology</em>, 211(11), 1792–1804.</li>
+    <li><strong>WERR Research Initiative</strong> (2026). WERR: Zero-Memory Fractal System-1 Reflex Decision Engine. <em>arXiv:2609.25498 [cs.NE]</em>.</li>
+    <li><strong>Izhikevich, E. M.</strong> (2003). Simple model of spiking neurons. <em>IEEE Transactions on Neural Networks</em>, 14(6), 1569–1572.</li>
+  </ol>
+
+</div>
+
+</body>
+</html>

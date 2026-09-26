@@ -1,0 +1,159 @@
+{
+  "timestamp": "2026-09-26 14:12:43",
+  "dataset": {
+    "source": "Princeton FlyWire Whole-Brain Connectome",
+    "biological_neurons": 158262,
+    "biological_synapses": 3990039,
+    "neuromorphic_coprocessor_pins": 1024
+  },
+  "experiment_1_synaptic_fidelity": {
+    "trials": 300,
+    "transmission_fidelity_percent": 100.0,
+    "mean_psp_amplitude_mv": 15.83,
+    "std_psp_amplitude_mv": 0.51,
+    "mean_latency_ms": 1.855,
+    "jitter_std_ms": 0.418,
+    "paired_pulse_ratio": 0.885
+  },
+  "experiment_2_biocompatibility_gaba": {
+    "analyzed_neurons": 4638,
+    "excitatory_count": 4299,
+    "inhibitory_count": 265,
+    "gaba_counter_rejection_percent": 38.58,
+    "ei_balance_ratio": 1.592,
+    "peak_membrane_voltage_mv": -53.93,
+    "epileptiform_pds_prevented": true,
+    "network_stability_index": 0.965
+  },
+  "experiment_3_motor_latency_and_saccades": {
+    "total_trials": 300,
+    "overall_saccade_accuracy_percent": 94.67,
+    "saccade_breakdown": {
+      "TURN_LEFT": 93.33,
+      "TURN_RIGHT": 96.0,
+      "THRUST_SURGE": 94.67,
+      "BRAKE": 94.67
+    },
+    "latencies_mean_ms": {
+      "werr_fractal_decision": 0.461,
+      "electrode_shank_rc": 0.122,
+      "eb_ring_compass_shift": 1.736,
+      "dn_motor_activation": 1.351,
+      "total_end_to_end": 3.671
+    },
+    "epg_attractor_bump_coherence_R": 0.841
+  },
+  "experiment_4_metabolic_and_thermal": {
+    "baseline_power_uw": 1.23,
+    "maximum_safe_continuous_freq_hz": 265,
+    "membrane_refractory_clamp_ms": 20.0,
+    "frequency_response_curve": [
+      {
+        "frequency_hz": 20,
+        "atp_turnover_per_sec": "2.46e+13",
+        "power_microwatts": 10.83,
+        "temp_rise_deg_c": 0.0006,
+        "excitotoxic_risk_index": 0.0,
+        "safety_status": "SAFE"
+      },
+      {
+        "frequency_hz": 50,
+        "atp_turnover_per_sec": "6.14e+13",
+        "power_microwatts": 12.67,
+        "temp_rise_deg_c": 0.0007,
+        "excitotoxic_risk_index": 0.0,
+        "safety_status": "SAFE"
+      },
+      {
+        "frequency_hz": 100,
+        "atp_turnover_per_sec": "1.23e+14",
+        "power_microwatts": 15.74,
+        "temp_rise_deg_c": 0.0009,
+        "excitotoxic_risk_index": 0.0,
+        "safety_status": "SAFE"
+      },
+      {
+        "frequency_hz": 200,
+        "atp_turnover_per_sec": "2.46e+14",
+        "power_microwatts": 21.89,
+        "temp_rise_deg_c": 0.0012,
+        "excitotoxic_risk_index": 0.0,
+        "safety_status": "SAFE"
+      },
+      {
+        "frequency_hz": 300,
+        "atp_turnover_per_sec": "3.69e+14",
+        "power_microwatts": 28.03,
+        "temp_rise_deg_c": 0.0016,
+        "excitotoxic_risk_index": 0.055,
+        "safety_status": "SAFE"
+      },
+      {
+        "frequency_hz": 500,
+        "atp_turnover_per_sec": "6.14e+14",
+        "power_microwatts": 40.32,
+        "temp_rise_deg_c": 0.0022,
+        "excitotoxic_risk_index": 1.0,
+        "safety_status": "CRITICAL_BURNOUT"
+      },
+      {
+        "frequency_hz": 1000,
+        "atp_turnover_per_sec": "1.23e+15",
+        "power_microwatts": 71.04,
+        "temp_rise_deg_c": 0.0039,
+        "excitotoxic_risk_index": 1.0,
+        "safety_status": "CRITICAL_BURNOUT"
+      }
+    ]
+  },
+  "experiment_5_information_theory": {
+    "source_entropy_H_X_bits": 1.857,
+    "response_entropy_H_Y_bits": 1.862,
+    "noise_entropy_H_Y_given_X_bits": 0.56,
+    "mutual_information_bits_per_symbol": 1.302,
+    "neural_coding_efficiency_percent": 70.1,
+    "channel_capacity_bits": 1.82,
+    "signal_to_noise_ratio_db": 19.44
+  },
+  "experiment_6_fault_tolerance": {
+    "evaluated_dropouts": [
+      {
+        "dropout_percent": 0,
+        "active_pins": 1024,
+        "fidelity_clean_percent": 92.4,
+        "fidelity_noise_15hz_percent": 87.04,
+        "fault_status": "ROBUST"
+      },
+      {
+        "dropout_percent": 10,
+        "active_pins": 921,
+        "fidelity_clean_percent": 88.87,
+        "fidelity_noise_15hz_percent": 83.71,
+        "fault_status": "ROBUST"
+      },
+      {
+        "dropout_percent": 25,
+        "active_pins": 768,
+        "fidelity_clean_percent": 83.29,
+        "fidelity_noise_15hz_percent": 78.46,
+        "fault_status": "ROBUST"
+      },
+      {
+        "dropout_percent": 50,
+        "active_pins": 512,
+        "fidelity_clean_percent": 73.05,
+        "fidelity_noise_15hz_percent": 68.81,
+        "fault_status": "DEGRADED"
+      },
+      {
+        "dropout_percent": 75,
+        "active_pins": 256,
+        "fidelity_clean_percent": 61.12,
+        "fidelity_noise_15hz_percent": 57.57,
+        "fault_status": "DEGRADED"
+      }
+    ],
+    "critical_pin_threshold": 256
+  },
+  "execution_duration_sec": 0.04
+}
