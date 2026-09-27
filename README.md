@@ -135,16 +135,21 @@ A formal camera-ready research manuscript is included in this repository:
 
 ### Citation
 ```bibtex
-@article{werrsoma2026,
-  title={Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
-  author={WERR Bio-Synthetic Systems Group},
-  journal={arXiv preprint arXiv:2609.25498},
-  year={2026}
+@article{dagli2026werrsoma,
+  title   = {Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
+  author  = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
+  journal = {arXiv preprint (Target: Nature Neuroscience / IEEE TBME)},
+  year    = {2026},
+  url     = {https://github.com/Lexovian/WerrSoma}
 }
 ```
 
 ---
 
-## 📜 License
+## 📜 License & Patent Notice
 
-This project is licensed under the [MIT License](LICENSE).
+This software is dual-licensed under the **[Business Source License 1.1 (BSL 1.1)](LICENSE)**:
+* **Academic, Educational, and Non-Commercial Research Use:** 100% Free and open for non-commercial research, peer-review replication, and benchmarking.
+* **Commercial Restriction:** Any deployment in commercial brain-computer interfaces (BCI), neuroprosthetics, commercial robotics/drones, or paid APIs requires a written Commercial License from the Licensors.
+* **Patent Protection:** Key neuromorphic coprocessor architectures, whole-brain connectome steering methods, and biophysical anti-burnout gating mechanisms are officially subject to national priority patent application **TÜRKPATENT TR 2026/016633** (Official Priority Date: September 27, 2026, 06:16:04 UTC+3) and upcoming international PCT applications under the Paris Convention.
+

@@ -1,12 +1,27 @@
 # Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome
 
-**Authors:** WERR Bio-Synthetic Systems Group & Drosophila Neuromorphic Research Initiative  
+**Authors:**  
+**Dağhan Dağlı**$^{1,*}$ (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
+**Volkan Dağlı**$^{2,3,\dagger}$ (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
+**Zerrin Dağlı**$^{4}$ (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
+
+**Affiliations:**  
+$^1$ *Toros Science High School (Özel Toros Fen Lisesi), Mersin Education Foundation, Mersin 33140, Türkiye*  
+$^2$ *ITouch Systems, Çukurova Teknokent, Adana / Mersin, Türkiye*  
+$^3$ *Anadolu University, Eskişehir, Türkiye*  
+$^4$ *Mersin University, Mersin, Türkiye*  
+
+$^*$ *Lead Author & Connectome Architecture Lead: daghan@pcworm.net*  
+$^\dagger$ *Corresponding Author: ask@answerr.me / vdagli@itouch.com.tr*  
+
 **Date:** September 2026  
 **Document Type:** Formal Scientific Research Article (Camera-Ready Specification)  
 **Target Venue:** *Nature Neuroscience* / *IEEE Transactions on Biomedical Engineering (TBME)*  
 **Code & Data Repository:** [WerrSoma](https://github.com/Lexovian/WerrSoma)  
 **Primary Dataset:** Princeton FlyWire Electron Microscopy Whole-Brain Drosophila Connectome (158,262 Neurons, 3,990,039 Synapses)  
 **Coprocessor Engine:** WERR Zero-Memory Fractal Decision Engine (v0.5.0, arXiv:2609.25498)  
+**Patent Priority:** TÜRKPATENT National Priority Application TR 2026/016633 (Filed September 27, 2026, 06:16:04 UTC+3)  
+
 
 ---
 
