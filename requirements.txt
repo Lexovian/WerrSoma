@@ -1,0 +1,5 @@
+# WerrSoma: Bio-Synthetic Neuromorphic Connectome Interfacing
+# Core dependencies for simulation, graph traversal, and empirical benchmark execution
+
+numpy>=1.22.0
+Pillow>=9.0.0

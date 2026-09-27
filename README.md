@@ -2,19 +2,61 @@
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.22996626"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996626.svg" alt="DOI: 10.5281/zenodo.22996626"></a>
+  <a href="https://lexovian.pcworm.net/"><img src="https://img.shields.io/badge/Live%20Portal-lexovian.pcworm.net-00f0ff" alt="Live Portal"></a>
   <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
+  <a href="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml"><img src="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml/badge.svg" alt="Scientific CI"></a>
   <img src="https://img.shields.io/badge/License-BSL%201.1-green.svg" alt="License: BSL 1.1">
   <img src="https://img.shields.io/badge/Dataset-Princeton%20FlyWire%20EM-emerald.svg" alt="Princeton FlyWire">
   <img src="https://img.shields.io/badge/Connectome-158%2C262%20Neurons-blueviolet.svg" alt="158,262 Neurons">
   <img src="https://img.shields.io/badge/Latency-3.67%20ms%20Reflex-red.svg" alt="3.67 ms Reflex Latency">
   <img src="https://img.shields.io/badge/VRAM-0%20Bytes-success.svg" alt="Zero VRAM">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-informational.svg" alt="Python 3.10+">
 </p>
 
 > **In Silico Integration of a Zero-Memory Fractal Decision Engine (WERR) with the Complete Whole-Brain *Drosophila Melanogaster* Connectome.**
 
-**WerrSoma** couples the complete 158,262-neuron, 3.99-million synapse electron-microscopy biological connectome of the fruit fly (*Drosophila melanogaster*, Princeton FlyWire) with a 1,024-pin implantable **WERR neuromorphic fractal coprocessor**. 
+**WerrSoma** couples the complete 158,262-neuron, 3.99-million synapse electron-microscopy biological connectome of the adult fruit fly (*Drosophila melanogaster*, Princeton FlyWire) with an implantable 1,024-pin **WERR neuromorphic fractal coprocessor**. 
 
 Rather than deploying heavyweight, power-hungry deep learning models or spiking transformers that suffer from high latency ($15-200\text{ ms}$) and VRAM bloat, WerrSoma utilizes **deterministic chaotic Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$)** to synthesize directional flight decisions and motor overrides in **$< 0.5\text{ ms}$** with **$0\text{ Bytes}$ of VRAM**.
+
+---
+
+## 🌐 Live Web Portal & Interactive Guides
+
+Experience the platform live in your browser:
+
+| Resource | Live Link | Description |
+| :--- | :--- | :--- |
+| **Main Web Portal** | [lexovian.pcworm.net](https://lexovian.pcworm.net/) | Central production portal with live telemetry and viewers. |
+| **👥 Halka Anlatım Rehberi** | [halka_anlatim_rehberi.html](https://lexovian.pcworm.net/halka_anlatim_rehberi.html) | Sıradan meraklılar, öğrenciler ve yatırımcılar için popüler bilim anlatımı. |
+| **🔬 Technical Whitepaper (TR/EN)** | [teknik_akademik_rehber.html](https://lexovian.pcworm.net/teknik_akademik_rehber.html) | Dual-language (Türkçe / English) biophysical formulation & benchmark report. |
+| **3D Flight Arena Simulator** | [fly_bioneural_flight_sim.html](https://lexovian.pcworm.net/fly_bioneural_flight_sim.html) | Interactive WebGL Three.js simulator with head-locked live brain telemetry. |
+| **3D Connectome Explorer** | [neuramap_werr_3d.html](https://lexovian.pcworm.net/neuramap_werr_3d.html) | 158k Drosophila point cloud laboratory with 1,024-pin implant shanks. |
+| **Live REST API** | [/api.php?action=status](https://lexovian.pcworm.net/api.php?action=status) | Real-time biophysical telemetry, fractal decisions, and benchmark stats. |
+| **Zenodo Sealed Package** | [doi.org/10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) | Permanent immutable DOI, camera-ready PDF, and replication archive. |
+
+---
+
+## ⚡ 1-Minute Quickstart (Replication in 3 Commands)
+
+Clone the repository and replicate all 6 empirical benchmark protocols in seconds:
+
+```bash
+# 1. Clone repository
+git clone https://github.com/Lexovian/WerrSoma.git
+cd WerrSoma
+
+# 2. Install minimal dependencies (NumPy & Pillow only)
+pip install -r requirements.txt
+
+# 3. Execute the comprehensive 6-experiment empirical suite (takes <0.1 sec)
+python run_scientific_experiments.py
+```
+
+To run the native dual-viewport 3D desktop application (Flight Arena + 158k Brain Point Cloud):
+```bash
+python bioneural_fly_app.py
+```
 
 ---
 
@@ -73,67 +115,41 @@ Tested across 6 rigorous biophysical protocols via [`run_scientific_experiments.
 
 ---
 
-## 🔥 Resolving the "Neuron Burnout" Hazard
+## 🛡️ Resolving the "Neuron Burnout" & Rejection Hazard
 
-*How can a MHz synthetic decision engine stimulate biological neurons without frying them?*
-1. **$20.0\text{ ms}$ Absolute Refractory Filter:** Inactivation gates on voltage-gated sodium channels ($DmNav$) block excessive excitation, capping single-cell spike rates below $50\text{ Hz}$.
-2. **Glial Metabolic Supply:** At normal flight frequencies ($100 - 200\text{ Hz}$), $Na^+/K^+$-ATPase pump ATP turnover is fully supplied by glial trehalose metabolism ($\Delta T < +0.002^\circ\text{C}$).
-3. **Biological GABAergic Homeostasis:** The Drosophila brain actively counteracts excess excitation with a $38.58\%$ hyperpolarizing counter-current, clamping the membrane potential safely at $-53.93\text{ mV}$.
+*How does WerrSoma achieve biocompatible integration without triggering neural burnout or tissue rejection?*
+
+1. **Elimination of Square-Wave PWM Shocks (Bio-Resonance):** Rather than blasting biological tissue with harsh digital square waves that cause depolarization block and habituation, WERR generates smooth chaotic Mandelbrot boundary oscillations that naturally phase-lock with endogenous action potential phase distributions.
+2. **Gaussian Sub-Threshold Electric Field Guidance:** Non-invasive field shaping guides membrane excitability without dielectric breakdown or cytotoxic ion influx.
+3. **$20.0\text{ ms}$ Absolute Refractory Clamp:** Voltage-gated sodium channel ($DmNav$) dynamics are enforced, capping individual pin frequency at $50\text{ Hz}$.
+4. **Biological GABAergic Homeostasis:** The Drosophila brain recruits a $38.58\%$ hyperpolarizing counter-current, clamping peak membrane potential safely at $-53.93\text{ mV}$ (preventing epileptiform paroxysmal depolarizing shifts).
 
 ---
 
-## 🚀 Interactive Simulators & Apps
+## 👥 Authors & Institutional Affiliations
 
-### 1. Dual-Viewport Desktop Application (Native Python)
-A standalone Tkinter + NumPy + Pillow 3D flight and connectome simulator:
-```bash
-python bioneural_fly_app.py
-```
-* **Left Viewport (3D Flight Arena):** Physical fly model with articulating wings ($192 - 244\text{ Hz}$), vortex trails, and dorsal cyber-backpack implant chip.
-* **Right Viewport (3D Brain Point Cloud):** 158,262 biological neurons with color-coded neuropils, glowing dorsal WERR silicon chip, 4 penetrating shanks, and real-time action potential flashes.
-* **Interactive Controls:**
-  * `[W][A][S][D]`: Telepathic motor command injection into WERR pins.
-  * `[C]`: **Plug-and-Play Coprocessor Toggle** (Engage WERR chip vs. Bypass to 100% natural biological autonomy).
-  * `[O]`: Toggle Orbit / Head-Lock 3D camera.
+```text
+Dağhan Dağlı 1,*, Volkan Dağlı 2,3,†, Zerrin Dağlı 4,5
 
-### 2. Live WebGL / 3D Web Simulator
-Open [`fly_bioneural_flight_sim.html`](fly_bioneural_flight_sim.html) directly in any modern browser for interactive Three.js exploration with synaptic photon flow.
+1 Toros Science High School, Mersin Education Foundation (Toros University), Türkiye
+2 Anadolu University, Türkiye
+3 ITouch Systems, Çukurova Teknokent, Türkiye
+4 Mersin University, Türkiye
+5 Yusuf Kalkavan Anatolian High School, Türkiye
 
-### 3. Automated Benchmark Suite
-Run all 6 biophysical experiments:
-```bash
-python run_scientific_experiments.py
+* Lead Author & Connectome Architecture Lead (ORCID: 0009-0003-2492-8313)
+† Corresponding Author: ask@answerr.me (ORCID: 0009-0000-1587-8703)
+  Z. Dağlı (ORCID: 0000-0001-9490-6425)
 ```
 
 ---
 
-## 📂 Repository Structure
+## 📄 Scientific Paper & Citation
 
-```
-├── bioneural_fly_app.py                # Native Python dual-viewport 3D application (158k neurons)
-├── run_scientific_experiments.py       # Comprehensive 6-experiment empirical benchmark runner
-├── scientific_benchmark_results.json   # Full empirical results, latencies, and p-values
-├── bioneural_werr_drosophila_paper.md  # Camera-ready scientific research paper manuscript
-├── bioneural_werr_drosophila_paper.html# Publication HTML with MathJax, Mermaid & print CSS
-├── compile_full_158k_connectome.py     # CSR binary compiler for Princeton FlyWire CSVs
-├── drosophila_full_158k_cache.npz      # Binary CSR cache (158k neurons, 3.99M synapses, ~48ms load)
-├── fly_bioneural_flight_sim.html       # WebGL / Three.js 3D flight & photon simulator
-├── neuramap_werr_3d.html               # 3D interactive connectome laboratory
-├── werrengine/                         # WERR Zero-Memory Fractal Decision Engine core
-├── neuramap/                           # Raw Princeton FlyWire connectome repository
-├── LICENSE                             # MIT License
-└── README.md                           # Documentation
-```
+* **Research Paper Manuscript:** [`bioneural_werr_drosophila_paper.md`](bioneural_werr_drosophila_paper.md)
+* **Camera-Ready PDF:** [`Bio_Synthetic_Neuromorphic_WerrSoma_Drosophila.pdf`](https://doi.org/10.5281/zenodo.22996626)
+* **Permanent DOI:** [10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626)
 
----
-
-## 📄 Scientific Paper Specification
-
-A formal camera-ready research manuscript is included in this repository:
-* **Markdown:** [`bioneural_werr_drosophila_paper.md`](bioneural_werr_drosophila_paper.md)
-* **Interactive HTML (MathJax & Print-to-PDF):** [`bioneural_werr_drosophila_paper.html`](bioneural_werr_drosophila_paper.html)
-
-### Citation
 ```bibtex
 @article{dagli2026werrsoma,
   title   = {Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
@@ -153,4 +169,3 @@ This software is dual-licensed under the **[Business Source License 1.1 (BSL 1.1
 * **Academic, Educational, and Non-Commercial Research Use:** 100% Free and open for non-commercial research, peer-review replication, and benchmarking.
 * **Commercial Restriction:** Any deployment in commercial brain-computer interfaces (BCI), neuroprosthetics, commercial robotics/drones, or paid APIs requires a written Commercial License from the Licensors.
 * **Patent Protection:** Key neuromorphic coprocessor architectures, whole-brain connectome steering methods, and biophysical anti-burnout gating mechanisms are officially subject to national priority patent application **TÜRKPATENT TR 2026/016633** (Official Priority Date: September 27, 2026, 06:16:04 UTC+3) and upcoming international PCT applications under the Paris Convention.
-
