@@ -3,16 +3,17 @@
 **Authors:**  
 **Dağhan Dağlı**$^{1,*}$ (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
 **Volkan Dağlı**$^{2,3,\dagger}$ (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
-**Zerrin Dağlı**$^{4}$ (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
+**Zerrin Dağlı**$^{4,5}$ (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
 
 **Affiliations:**  
-$^1$ *Toros Science High School (Özel Toros Fen Lisesi), Mersin Education Foundation, Mersin 33140, Türkiye*  
-$^2$ *ITouch Systems, Çukurova Teknokent, Adana / Mersin, Türkiye*  
-$^3$ *Anadolu University, Eskişehir, Türkiye*  
-$^4$ *Mersin University, Mersin, Türkiye*  
+$^1$ *Toros Science High School, Mersin Education Foundation (Toros University), Türkiye*  
+$^2$ *Anadolu University, Türkiye*  
+$^3$ *ITouch Systems, Çukurova Teknokent, Türkiye*  
+$^4$ *Mersin University, Türkiye*  
+$^5$ *Yusuf Kalkavan Anatolian High School, Türkiye*  
 
-$^*$ *Lead Author & Connectome Architecture Lead: daghan@pcworm.net*  
-$^\dagger$ *Corresponding Author: ask@answerr.me / vdagli@itouch.com.tr*  
+$^*$ *Lead Author & Connectome Architecture Lead*  
+$^\dagger$ *Corresponding Author: ask@answerr.me*  
 
 **Date:** September 2026  
 **Document Type:** Formal Scientific Research Article (Camera-Ready Specification)  
