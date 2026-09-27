@@ -1,13 +1,13 @@
 # 🧬 WerrSoma: Bio-Synthetic Neuromorphic Connectome Interfacing
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  <a href="https://doi.org/10.5281/zenodo.22996626"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996626.svg" alt="DOI: 10.5281/zenodo.22996626"></a>
+  <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
+  <img src="https://img.shields.io/badge/License-BSL%201.1-green.svg" alt="License: BSL 1.1">
   <img src="https://img.shields.io/badge/Dataset-Princeton%20FlyWire%20EM-emerald.svg" alt="Princeton FlyWire">
   <img src="https://img.shields.io/badge/Connectome-158%2C262%20Neurons-blueviolet.svg" alt="158,262 Neurons">
-  <img src="https://img.shields.io/badge/Synapses-3.99M%20Edges-amber.svg" alt="3.99M Synapses">
   <img src="https://img.shields.io/badge/Latency-3.67%20ms%20Reflex-red.svg" alt="3.67 ms Reflex Latency">
   <img src="https://img.shields.io/badge/VRAM-0%20Bytes-success.svg" alt="Zero VRAM">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-informational.svg" alt="Python 3.10+">
 </p>
 
 > **In Silico Integration of a Zero-Memory Fractal Decision Engine (WERR) with the Complete Whole-Brain *Drosophila Melanogaster* Connectome.**
@@ -138,9 +138,10 @@ A formal camera-ready research manuscript is included in this repository:
 @article{dagli2026werrsoma,
   title   = {Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
   author  = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
-  journal = {arXiv preprint (Target: Nature Neuroscience / IEEE TBME)},
+  journal = {Zenodo Preprint (Target: Nature Neuroscience / IEEE TBME)},
   year    = {2026},
-  url     = {https://github.com/Lexovian/WerrSoma}
+  doi     = {10.5281/zenodo.22996626},
+  url     = {https://doi.org/10.5281/zenodo.22996626}
 }
 ```
 
