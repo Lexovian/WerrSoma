@@ -23,6 +23,13 @@
     pdfauthor={Daghan Dagli, Volkan Dagli, Zerrin Dagli}
 }
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 \title{\textbf{\Large Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain \textit{Drosophila melanogaster} Connectome}}
 
 \author{
@@ -48,10 +55,10 @@
 \textbf{\textit{\"Ozet (Extended Turkish Abstract)}---Yapay karar verme sistemlerinin biyolojik sinir dokular\i yla entegrasyonu; milisaniye-alt\i{} tepki s\"uresi, s\i f\i r bellek y\"uk\"u ve biyofiziksel homeostaza tam uyum gerektirir. Bu \c{c}al\i\c{s}mada, Princeton FlyWire konsorsiyumu taraf\i ndan haritaland\i r\i lan 158.262 n\"oron ve 3.990.039 kimyasal sinapsl\i{} tam \textit{Drosophila melanogaster} (sirke sine\u{g}i) konnektomunu, 1.024 pinli implante edilebilir \textbf{WERR} n\"oromorfik fraktal yard\i mc\i{} i\c{s}lemcisiyle birle\c{s}tiren \textbf{WerrSoma} biyo-sentetik beyin-makine aray\"uz\"u sunulmaktad\i r. A\u{g}\i r tens\"or matrisleri yerine Mandelbrot k\"umesi kaotik ka\c{c}\i\c{s} s\i n\i r\i{} ($\partial \mathcal{M}$) dinamiklerinden anl\i k Sistem-1 refleks kararlar\i{} \"ureten bu mimari, 0 Byte VRAM kullan\i r. Ellipsoid Body (EB), Descending Motor Neurons (DN) ve Mushroom Bodies (MB) b\"olgelerine yerle\c{s}tirilen 4 mikro-elektrot ucu \"uzerinden y\"ur\"ut\"ulen 6 ayr\i{} deneysel protokol sonucunda; \%100.0 sinaptik iletim sadakati ($15.83 \pm 0.51$~mV), biyolojik GABAerjik ara n\"oronlar\i n \%38.58'lik dengeleyici fren ak\i m\i yla zar potansiyelini $-53.93$~mV d\"uzeyinde kilitleyerek epileptik n\"obetleri \"onlemesi (Kararl\i l\i k Endeksi: $0.965$), $3.671$~ms u\c{c}tan uca refleks gecikmesiyle \%94.67 u\c{c}u\c{s} manevra isabeti, $1.23\ \mu\text{W}$ bazal g\"u\c{c} t\"uketimi ($\Delta T = +0.0012^\circ\text{C}$ \i s\i l art\i\c{s}), \%70.10 Shannon n\"oral kodlama verimlili\u{g}i ($1.302$~bit/sembol) ve \%25 elektrot kayb\i nda dahi $>\%78$ y\"onlendirme ba\c{s}ar\i s\i{} do\u{g}rulanm\i\c{s}t\i r.}
 \end{abstract}
 
-\vspace{0.2cm}
+\vspace{0.15cm}
 \noindent\textbf{Keywords:} Whole-Brain Connectome, \textit{Drosophila melanogaster}, Princeton FlyWire, Neuromorphic Brain-Computer Interface, Zero-Memory Fractal Engine, WERR, Ring Attractor Dynamics, Homeostatic Biocompatibility, Patent Priority TR 2026/016633.
 
-\footnotetext{Permanent archive: Zenodo DOI \href{https://doi.org/10.5281/zenodo.22996626}{10.5281/zenodo.22996626}~\cite{dagli2026werrsoma_zenodo}. National patent priority: T\"URKPATENT Application No.\ TR 2026/016633 (Receipt: 2026-GE-688155, filed September 27, 2026). Source code, 158K CSR connectome engine, and 6-experiment benchmark suite: \url{https://github.com/Lexovian/WerrSoma}. Interactive 3D WebGL flight and connectome simulators: \url{https://lexovian.pcworm.net/}. Companion WERR engine theory: arXiv:2609.25498~\cite{dagli2026werr} and arXiv:2609.30115~\cite{dagli2026oed}.}
+\blfootnote{Permanent archive: Zenodo DOI \href{https://doi.org/10.5281/zenodo.22996626}{10.5281/zenodo.22996626}~\cite{dagli2026werrsoma_zenodo}. National patent priority: T\"URKPATENT Application No.\ TR 2026/016633 (Receipt: 2026-GE-688155, filed September 27, 2026). Source code, 158K CSR connectome engine, and 6-experiment benchmark suite: \url{https://github.com/Lexovian/WerrSoma}. Interactive 3D WebGL flight and connectome simulators: \url{https://lexovian.pcworm.net/}. Companion WERR engine theory: arXiv:2609.25498~\cite{dagli2026werr} and arXiv:2609.30115~\cite{dagli2026oed}.}
 
 \section{Introduction}
 The complete synapse-resolution reconstruction of the adult fruit fly (\textit{Drosophila melanogaster}) brain from serial-section transmission electron microscopy (ssTEM) by the Princeton FlyWire Consortium represents a watershed moment in systems neuroscience~\cite{dorkenwald2024neuronal, schlegel2024whole}. Encompassing 158,262 identified biological neurons and 3,990,039 directed chemical synapses distributed across 57 stereotaxic neuropil compartments, this connectome provides an exhaustive topological blueprint of sensory integration, spatial navigation, associative memory, and rapid motor control in a behaving organism.
@@ -72,7 +79,7 @@ By mapping incoming sensory telemetry onto localized coordinate perturbations $\
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.96\textwidth]{figures/fig1_werrsoma_architecture.png}
+    \includegraphics[width=0.95\textwidth]{figures/fig1_werrsoma_architecture.png}
     \caption{\textbf{System Architecture of the WerrSoma Bio-Synthetic Interface.} The implantable 1,024-pin WERR silicon coprocessor (left) evaluates Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$) in $0.461$~ms with zero VRAM overhead, routing multi-sector stimulation pulses across a $32 \times 32$ micro-electrode array. Four biocompatible polyimide shanks (center) penetrate the dorsal cranial surface to interface with the 158,262-neuron Princeton FlyWire connectome (right), targeting the Ellipsoid Body (EB) heading ring attractor, the Descending Motor Neuron (DN) pool, and the bilateral Mushroom Bodies (MB), while recruiting endogenous GABAergic counter-regulation ($38.58\%$) to prevent excitotoxic runaway.}
     \label{fig:architecture}
 \end{figure*}
@@ -93,9 +100,16 @@ We formalize the adult \textit{Drosophila} whole-brain connectome as a directed,
 \begin{equation}
 \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{W}, \mathcal{P}, \mathcal{X})
 \end{equation}
-where $\mathcal{V} = \{v_1, v_2, \dots, v_{158262}\}$ denotes the set of reconstructed biological neurons; $\mathcal{E} \subset \mathcal{V} \times \mathcal{V}$ represents the $3,990,039$ directed chemical synaptic junctions; $\mathcal{W}: \mathcal{E} \to \mathbb{R}^+$ assigns empirically reconstructed cleft contact counts and synaptic conductances; $\mathcal{P}: \mathcal{V} \to \{-1, +1\}$ specifies neurotransmitter sign ($+1$ for excitatory nicotinic acetylcholine [ACh] neurons; $-1$ for inhibitory $\text{GABA}_A/\text{Rdl}$ and glutamate-gated chloride channel [GluCl] interneurons); and $\mathcal{X}: \mathcal{V} \to \mathbb{R}^3$ maps each soma and synaptic neuropil centroid to 3D stereotaxic coordinates (in $\mu\text{m}$) within the canonical FAFB/JRC2018 template.
+where $\mathcal{V} = \{v_1, v_2, \dots, v_{158262}\}$ denotes the set of reconstructed biological neurons; $\mathcal{E} \subset \mathcal{V} \times \mathcal{V}$ represents the $3,990,039$ directed chemical synaptic junctions; $\mathcal{W}: \mathcal{E} \to \mathbb{R}^+$ assigns empirically reconstructed cleft contact counts and synaptic conductances; $\mathcal{P}: \mathcal{V} \to \{-1, +1\}$ specifies neurotransmitter sign ($+1$ for excitatory nicotinic acetylcholine [ACh] neurons; $-1$ for inhibitory $\text{GABA}_A/\text{Rdl}$ and glutamate-gated chloride channel [GluCl] interneurons); and $\mathcal{X}: \mathcal{V} \to \mathbb{R}^3$ maps each soma and synaptic neuropil centroid to 3D stereotaxic coordinates (in $\mu\text{m}$) within the canonical FAFB/JRC2018 template (Fig.~\ref{fig:connectome_atlas}).
 
 To achieve sub-millisecond graph traversal without GPU acceleration, $\mathcal{G}$ is compiled into a zero-fragmentation Compressed Sparse Row (CSR) binary adjacency structure (\texttt{drosophila\_full\_158k\_cache.npz}), enabling vectorized sparse matrix-vector propagation directly in CPU L3 cache.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/fig2_connectome_atlas_projection.png}
+    \caption{\textbf{Stereotaxic Anatomical Projection of the 158,262-Neuron \textit{Drosophila} Connectome and Penetrating Shanks.} \textbf{(a)} Coronal anterior projection ($X\text{--}Y$ plane, $\mu\text{m}$) rendered directly from the empirical FlyWire coordinate cache (\texttt{drosophila\_full\_158k\_cache.npz}), illustrating the dorsal WERR 1,024-pin silicon chip ($76 \times 40\ \mu\text{m}$) at $y = 115\ \mu\text{m}$ and the four penetrating polyimide micro-shanks targeting the Ellipsoid Body (EB, red, $368$ neurons), Descending Motor Neurons (DN, green, $1,316$ neurons), and bilateral Mushroom Bodies (MB, purple, $4,270$ neurons). \textbf{(b)} Horizontal dorsal projection ($X\text{--}Z$ plane, $\mu\text{m}$) highlighting the bilateral organization of the MB calyces, central EB ring attractor, and cervical DN motor output.}
+    \label{fig:connectome_atlas}
+\end{figure*}
 
 \subsection{WERR 1,024-Pin Coprocessor Micro-Grid}
 The synthetic coprocessor is modeled as a $32 \times 32$ planar micro-electrode grid ($1,024$ active channels) fabricated on a $76\ \mu\text{m} \times 40\ \mu\text{m}$ ultra-thin silicon die seated at the dorsal cranial midline ($y = 105.0\ \mu\text{m}$). The electrode array is partitioned into four functional quadrant sectors:
@@ -106,17 +120,20 @@ The synthetic coprocessor is modeled as a $32 \times 32$ planar micro-electrode 
     \item \textbf{Sector Brk (Pins 512--671):} Hyperpolarizing aerodynamic airbrake regulator ($192$~Hz wingbeat target).
 \end{itemize}
 
-Four flexible polyimide micro-shanks penetrate through the perineurial blood-brain barrier to stereotaxic targets:
+Four flexible polyimide micro-shanks penetrate through the perineurial blood-brain barrier to stereotaxic targets (Fig.~\ref{fig:connectome_atlas}a):
 \begin{align}
-\mathbf{r}_{\text{shank},1} &= (0, -10, 20)\ \mu\text{m} && [\text{Ellipsoid Body Ring}], \\
-\mathbf{r}_{\text{shank},2} &= (0, -180, -15)\ \mu\text{m} && [\text{Descending Motor Pool}], \\
-\mathbf{r}_{\text{shank},3,4} &= (\pm 100, 70, -60)\ \mu\text{m} && [\text{Bilateral Mushroom Bodies}].
+\mathbf{r}_{\text{shank},1} &= (0, -10, 20)\ \mu\text{m} && \text{[EB Ring]} \\
+\mathbf{r}_{\text{shank},2} &= (0, -180, -15)\ \mu\text{m} && \text{[DN Pool]} \\
+\mathbf{r}_{\text{shank},3,4} &= (\pm 100, 70, -60)\ \mu\text{m} && \text{[Bilateral MB]}
 \end{align}
 
 \subsection{Conductance-Based LIF Membrane Dynamics}
 Membrane potential trajectories $V_{m,i}(t)$ across all biological neurons $i \in \mathcal{V}$ are governed by vectorized conductance-based Leaky Integrate-and-Fire (LIF) differential equations~\cite{izhikevich2003simple}:
 \begin{equation}
-\tau_m \frac{dV_{m,i}(t)}{dt} = \big(V_{\text{rest}} - V_{m,i}(t)\big) + R_m \Bigg[ I_{\text{spont},i}(t) + I_{\text{shank},i}(t) + \sum_{j \in \text{pre}(i)} w_{ji} p_j S_j(t) \Bigg]
+\begin{aligned}
+\tau_m \frac{dV_{m,i}(t)}{dt} &= \big(V_{\text{rest}} - V_{m,i}(t)\big) + R_m \big(I_{\text{spont},i}(t) + I_{\text{shank},i}(t)\big) \\
+&\quad + R_m \sum_{j \in \text{pre}(i)} w_{ji}\, p_j\, S_j(t)
+\end{aligned}
 \label{eq:lif}
 \end{equation}
 where $V_{\text{rest}} = -65.0$~mV is the resting membrane potential, $V_{\text{thresh}} = -50.0$~mV is the action potential initiation threshold, $V_{\text{reset}} = -70.0$~mV is the post-spike hyperpolarization reset potential, $\tau_m = 20.0$~ms is the passive membrane time constant, and $t_{\text{ref}} = 20.0$~ms is a strictly enforced biophysical refractory window preventing high-frequency tetanic lockup.
@@ -142,7 +159,8 @@ where the Rayleigh coherence magnitude $R \in [0, 1]$ quantifies ring attractor 
 \centering
 \caption{\textbf{Comprehensive Summary of Empirical Benchmark Results Across Six Bio-Synthetic Protocols.}}
 \label{tab:benchmarks}
-\small
+\vspace{0.1cm}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}llcc@{}}
 \toprule
 \textbf{Protocol \& Biophysical Parameter} & \textbf{Physiological Target} & \textbf{Empirical Result} & \textbf{Verification Status} \\
@@ -171,7 +189,8 @@ where the Rayleigh coherence magnitude $R \in [0, 1]$ quantifies ring attractor 
 \textbf{Exp 6:} Steering Retention at 25\% Electrode Pin Dropout & $> 75.0\%$ & $\mathbf{83.29\%}$ (clean) / $\mathbf{78.46\%}$ (noisy) & \textbf{PASSED (ROBUST)} \\
 \textbf{Exp 6:} Critical Pin Failure Threshold & $< 350$~pins & $\mathbf{256}$~\textbf{pins} ($75\%$ loss tolerance) & \textbf{PASSED} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table*}
 
 \section{Experimental Protocols \& Empirical Results}
@@ -187,7 +206,7 @@ A primary failure mode of high-speed neural prosthetics is the induction of runa
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{figures/fig2_homeostatic_gaba_and_latency.png}
+    \includegraphics[width=\columnwidth]{figures/fig3_homeostatic_gaba_and_latency.png}
     \caption{\textbf{Homeostatic Clamping and Reflex Latency.} \textbf{(a)} Endogenous GABAergic interneurons recruit a $38.58\%$ inhibitory counter-current that clamps membrane depolarization at $-53.93$~mV (green), preventing runaway epileptiform seizure activity above $-35.0$~mV (red dashed). \textbf{(b)} End-to-end closed-loop reflex latency totals $3.671$~ms, well below the $5.0$~ms biological escape ceiling.}
     \label{fig:homeostasis_latency}
 \end{figure}
@@ -204,7 +223,7 @@ To rigorously test whether high-frequency synthetic decisions risk ``burning out
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{figures/fig3_bioenergetics_and_fault_tolerance.png}
+    \includegraphics[width=\columnwidth]{figures/fig4_bioenergetics_and_fault_tolerance.png}
     \caption{\textbf{Bio-Energetic Safety Envelope and Electrode Fault Tolerance.} \textbf{(a)} Metabolic power ($\mu\text{W}$, blue) and excitotoxic burnout risk (red) across stimulation frequencies, establishing a safe continuous operating ceiling at $f_{\max} = 265$~Hz (green shaded region). \textbf{(b)} Directional motor fidelity across progressive electrode pin dropout ($0\%\text{--}75\%$) under clean and $15$~Hz Poisson noise conditions.}
     \label{fig:bioenergetics_dropout}
 \end{figure}
@@ -221,7 +240,8 @@ To model chronic \textit{in vivo} electrode oxidation or mechanical shear, we me
 \centering
 \caption{\textbf{Comparison with Neuromorphic \& BMI Architectures.}}
 \label{tab:comparison}
-\scriptsize
+\vspace{0.1cm}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lcccc@{}}
 \toprule
 \textbf{Architecture} & \textbf{Latency} & \textbf{VRAM} & \textbf{Power} & \textbf{Connectome} \\
@@ -231,7 +251,8 @@ TrueNorth / Loihi & $1\text{--}10$~ms & SRAM & $50\text{--}100\ \mu\text{W}$ & S
 Deep LLM / ViT & $150\text{--}800$~ms & $4\text{--}24$~GB & $50\text{--}300$~W & Incompatible \\
 \textbf{WerrSoma (Ours)} & \textbf{3.67~ms} & \textbf{0 Bytes} & \textbf{1.23--21.9~$\mu$W} & \textbf{158,262 (Full)} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \section{Discussion \& Conclusion}

@@ -14,8 +14,9 @@ TEX_PATH = os.path.join(BASE_DIR, "main.tex")
 REQUIRED_FILES = [
     "main.tex",
     "figures/fig1_werrsoma_architecture.png",
-    "figures/fig2_homeostatic_gaba_and_latency.png",
-    "figures/fig3_bioenergetics_and_fault_tolerance.png",
+    "figures/fig2_connectome_atlas_projection.png",
+    "figures/fig3_homeostatic_gaba_and_latency.png",
+    "figures/fig4_bioenergetics_and_fault_tolerance.png",
 ]
 
 
@@ -29,10 +30,8 @@ def audit_latex(tex_path: str) -> None:
 
     # 2. Check balanced curly braces (ignoring escaped \{ and \})
     clean = re.sub(r"\\[{}]", "", content)
-    # Remove comments
     clean_lines = []
     for line in clean.splitlines():
-        # Remove % comments (ignoring \%)
         line_no_comment = re.split(r"(?<!\\)%", line)[0]
         clean_lines.append(line_no_comment)
     clean_text = "\n".join(clean_lines)

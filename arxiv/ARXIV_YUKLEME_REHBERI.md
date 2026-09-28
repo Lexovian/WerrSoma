@@ -14,8 +14,9 @@ arXiv yükleme ekranında (**Add Files** adımında) aşağıdaki iki arşiv dos
 ### Arşiv İçeriği (Kök Dizinde Doğrudan Yer Alan Dosyalar):
 - `main.tex` — `\pdfoutput=1` direktifli, 2 sütunlu IEEE/Nature akademik formatında, tüm referansları (`\begin{thebibliography}{99}`) kendi içinde gömülü (self-contained), %100 7-bit saf LaTeX uyumlu ana makale dosyası.
 - `figures/fig1_werrsoma_architecture.png` — 300 DPI vektörel kalitede WerrSoma 1.024-pin silikon yardımcı işlemci + 4 poliimid mikro-şaft + 158.262 nöronluk FlyWire konnektom mimari şeması.
-- `figures/fig2_homeostatic_gaba_and_latency.png` — 300 DPI biyolojik GABAerjik homeostatik frenleme ($-53.93\text{ mV}$) ve $3.671\text{ ms}$ uçtan uca refleks gecikme grafiği.
-- `figures/fig3_bioenergetics_and_fault_tolerance.png` — 300 DPI ATP biyo-enerjetik / nöron yanması (burnout) güvenlik zarfı ($f_{\max} = 265\text{ Hz}$) ve %0–%75 elektrot pin kopması (fault tolerance) grafiği.
+- `figures/fig2_connectome_atlas_projection.png` — 300 DPI gerçek 158.262 nöronluk FlyWire konnektom verisinden (`drosophila_full_158k_cache.npz`) üretilen Koronal Ön ($X\text{--}Y$) ve Yatay Dorsal ($X\text{--}Z$) anatomik projeksiyonlar ile dorsal WERR çipi ve 4 penetran şaftın stereotaksik hedefleri (EB, DN, Bilateral MB).
+- `figures/fig3_homeostatic_gaba_and_latency.png` — 300 DPI biyolojik GABAerjik homeostatik frenleme ($-53.93\text{ mV}$) ve $3.671\text{ ms}$ uçtan uca refleks gecikme grafiği.
+- `figures/fig4_bioenergetics_and_fault_tolerance.png` — 300 DPI ATP biyo-enerjetik / nöron yanması (burnout) güvenlik zarfı ($f_{\max} = 265\text{ Hz}$) ve %0–%75 elektrot pin kopması (fault tolerance) grafiği.
 
 ---
 
@@ -40,7 +41,7 @@ arXiv yükleme ekranında (**Add Files** adımında) aşağıdaki iki arşiv dos
 1. **"Upload Files"** ekranında `werrsoma_arxiv_package.tar.gz` (veya `werrsoma_arxiv_package.zip`) dosyasını seçip yükleyin.
 2. **"Continue / Process Files"** butonuna tıklayın.
 3. arXiv'in **AutoTeX** sistemi `\pdfoutput=1` komutunu görünce otomatik olarak `pdflatex` çalıştıracak ve PDF'i üretecektir.
-4. **"View PDF"** butonuna tıklayarak 2 sütunlu makaleyi, 3 yüksek çözünürlüklü şekli ve 2 tabloyu kontrol edip onaylayın.
+4. **"View PDF"** butonuna tıklayarak 2 sütunlu makaleyi, 4 yüksek çözünürlüklü şekli ve 2 tabloyu kontrol edip onaylayın.
 
 ---
 
@@ -67,7 +68,7 @@ Interfacing artificial decision-making systems with biological neural substrates
 
 ### 📌 Comments (Yorumlar)
 ```text
-7 pages, 3 figures, 2 tables. Bilingual (English/Turkish) abstract included in PDF. Open-source 158,262-neuron CSR connectome simulator and 6-protocol benchmark suite available at https://github.com/Lexovian/WerrSoma . Interactive 3D WebGL portal: https://lexovian.pcworm.net/
+7 pages, 4 figures, 2 tables. Bilingual (English/Turkish) abstract included in PDF. Open-source 158,262-neuron CSR connectome simulator and 6-protocol benchmark suite available at https://github.com/Lexovian/WerrSoma . Interactive 3D WebGL portal: https://lexovian.pcworm.net/
 ```
 
 ### 📌 Report Number (Kurumsal Rapor / Patent Numarası)
