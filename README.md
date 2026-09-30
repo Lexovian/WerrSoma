@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.22996626"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996626.svg" alt="DOI: 10.5281/zenodo.22996626"></a>
-  <a href="https://lexovian.pcworm.net/"><img src="https://img.shields.io/badge/Live%20Portal-lexovian.pcworm.net-00f0ff" alt="Live Portal"></a>
+  <a href="https://werrsoma.answerr.me/"><img src="https://img.shields.io/badge/Live%20Portal-werrsoma.answerr.me-00f0ff" alt="Live Portal"></a>
   <a href="arxiv/"><img src="https://img.shields.io/badge/arXiv-Ready%20Package-b31b1b.svg" alt="arXiv Package"></a>
   <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
   <a href="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml"><img src="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml/badge.svg" alt="Scientific CI"></a>
@@ -28,12 +28,12 @@ Experience the platform live in your browser:
 
 | Resource | Live Link | Description |
 | :--- | :--- | :--- |
-| **Main Web Portal** | [lexovian.pcworm.net](https://lexovian.pcworm.net/) | Central production portal with live telemetry and viewers. |
-| **👥 Halka Anlatım Rehberi** | [halka_anlatim_rehberi.html](https://lexovian.pcworm.net/halka_anlatim_rehberi.html) | Sıradan meraklılar, öğrenciler ve yatırımcılar için popüler bilim anlatımı. |
-| **🔬 Technical Whitepaper (TR/EN)** | [teknik_akademik_rehber.html](https://lexovian.pcworm.net/teknik_akademik_rehber.html) | Dual-language (Türkçe / English) biophysical formulation & benchmark report. |
-| **3D Flight Arena Simulator** | [fly_bioneural_flight_sim.html](https://lexovian.pcworm.net/fly_bioneural_flight_sim.html) | Interactive WebGL Three.js simulator with head-locked live brain telemetry. |
-| **3D Connectome Explorer** | [neuramap_werr_3d.html](https://lexovian.pcworm.net/neuramap_werr_3d.html) | 158k Drosophila point cloud laboratory with 1,024-pin implant shanks. |
-| **Live REST API** | [/api.php?action=status](https://lexovian.pcworm.net/api.php?action=status) | Real-time biophysical telemetry, fractal decisions, and benchmark stats. |
+| **Main Web Portal** | [werrsoma.answerr.me](https://werrsoma.answerr.me/) | Central production portal with live telemetry and viewers. |
+| **👥 Halka Anlatım Rehberi** | [halka_anlatim_rehberi.html](https://werrsoma.answerr.me/halka_anlatim_rehberi.html) | Sıradan meraklılar, öğrenciler ve yatırımcılar için popüler bilim anlatımı. |
+| **🔬 Technical Whitepaper (TR/EN)** | [teknik_akademik_rehber.html](https://werrsoma.answerr.me/teknik_akademik_rehber.html) | Dual-language (Türkçe / English) biophysical formulation & benchmark report. |
+| **3D Flight Arena Simulator** | [fly_bioneural_flight_sim.html](https://werrsoma.answerr.me/fly_bioneural_flight_sim.html) | Interactive WebGL Three.js simulator with head-locked live brain telemetry. |
+| **3D Connectome Explorer** | [neuramap_werr_3d.html](https://werrsoma.answerr.me/neuramap_werr_3d.html) | 158k Drosophila point cloud laboratory with 1,024-pin implant shanks. |
+| **Live REST API** | [/api.php?action=status](https://werrsoma.answerr.me/api.php?action=status) | Real-time biophysical telemetry, fractal decisions, and benchmark stats. |
 | **Zenodo Sealed Package** | [doi.org/10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) | Permanent immutable DOI, camera-ready PDF, and replication archive. |
 | **📄 arXiv Submission Package** | [`arxiv/`](arxiv/) | Camera-ready 2-column LaTeX manuscript, 300 DPI 158K connectome projection, and `.tar.gz`/`.zip` bundles. |
 

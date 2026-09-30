@@ -39,5 +39,5 @@ Ensure all tests exit with status `0` and do not violate the biophysical homeost
 
 For research collaborations, data sharing, or commercial licensing inquiries:
 * **Corresponding Author:** Volkan Dağlı (`ask@answerr.me`)
-* **Project Portal:** [https://lexovian.pcworm.net/](https://lexovian.pcworm.net/)
+* **Project Portal:** [https://werrsoma.answerr.me/](https://werrsoma.answerr.me/)
 * **Zenodo Repository:** [https://doi.org/10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626)

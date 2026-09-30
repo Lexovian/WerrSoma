@@ -68,7 +68,7 @@ Interfacing artificial decision-making systems with biological neural substrates
 
 ### 📌 Comments (Yorumlar)
 ```text
-7 pages, 4 figures, 2 tables. Bilingual (English/Turkish) abstract included in PDF. Open-source 158,262-neuron CSR connectome simulator and 6-protocol benchmark suite available at https://github.com/Lexovian/WerrSoma . Interactive 3D WebGL portal: https://lexovian.pcworm.net/
+7 pages, 4 figures, 2 tables. Bilingual (English/Turkish) abstract included in PDF. Open-source 158,262-neuron CSR connectome simulator and 6-protocol benchmark suite available at https://github.com/Lexovian/WerrSoma . Interactive 3D WebGL portal: https://werrsoma.answerr.me/
 ```
 
 ### 📌 Report Number (Kurumsal Rapor / Patent Numarası)

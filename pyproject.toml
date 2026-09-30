@@ -29,6 +29,6 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://lexovian.pcworm.net/"
+"Homepage" = "https://werrsoma.answerr.me/"
 "Zenodo DOI" = "https://doi.org/10.5281/zenodo.22996626"
 "Repository" = "https://github.com/Lexovian/WerrSoma"
