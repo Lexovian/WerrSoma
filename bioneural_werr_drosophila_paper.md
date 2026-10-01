@@ -1,4 +1,4 @@
-# Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome
+# Bio-Synthetic Neuromorphic Interfacing: Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome
 
 **Authors:**  
 **Dağhan Dağlı**$^{1,*}$ (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  

@@ -1,6 +1,6 @@
 # WerrSoma — arXiv Resmi Yükleme ve Yayınlama Rehberi (Step-by-Step Submission Guide)
 
-Bu klasör, **WerrSoma** (*"Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila melanogaster Connectome"*) çalışmasının **arXiv AutoTeX (pdflatex)** motorunda **sıfır hata ile (Zero-Error)** derlenmesi için hazırlanmış tam yayın paketini içerir.
+Bu klasör, **WerrSoma** (*"Bio-Synthetic Neuromorphic Interfacing: Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila melanogaster Connectome"*) çalışmasının **arXiv AutoTeX (pdflatex)** motorunda **sıfır hata ile (Zero-Error)** derlenmesi için hazırlanmış tam yayın paketini içerir.
 
 ---
 
@@ -51,7 +51,7 @@ arXiv'in **Metadata** adımındaki kutucuklara aşağıdaki metinleri **birebir 
 
 ### 📌 Title (Başlık)
 ```text
-Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila melanogaster Connectome
+Bio-Synthetic Neuromorphic Interfacing: Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila melanogaster Connectome
 ```
 
 ### 📌 Authors (Yazarlar)
