@@ -1,7 +1,7 @@
 # 🧬 WerrSoma: Bio-Synthetic Neuromorphic Connectome Interfacing
 
 <p align="center">
-  <a href="https://doi.org/10.5281/zenodo.22996626"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996626.svg" alt="DOI: 10.5281/zenodo.22996626"></a>
+  <a href="https://doi.org/10.5281/zenodo.22996625"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996625.svg" alt="DOI: 10.5281/zenodo.22996625"></a>
   <a href="https://werrsoma.answerr.me/"><img src="https://img.shields.io/badge/Live%20Portal-werrsoma.answerr.me-00f0ff" alt="Live Portal"></a>
   <a href="arxiv/"><img src="https://img.shields.io/badge/arXiv-Ready%20Package-b31b1b.svg" alt="arXiv Package"></a>
   <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
@@ -34,7 +34,7 @@ Experience the platform live in your browser:
 | **3D Flight Arena Simulator** | [fly_bioneural_flight_sim.html](https://werrsoma.answerr.me/fly_bioneural_flight_sim.html) | Interactive WebGL Three.js simulator with head-locked live brain telemetry. |
 | **3D Connectome Explorer** | [neuramap_werr_3d.html](https://werrsoma.answerr.me/neuramap_werr_3d.html) | 158k Drosophila point cloud laboratory with 1,024-pin implant shanks. |
 | **Live REST API** | [/api.php?action=status](https://werrsoma.answerr.me/api.php?action=status) | Real-time biophysical telemetry, fractal decisions, and benchmark stats. |
-| **Zenodo Sealed Package** | [doi.org/10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) | Permanent immutable DOI, camera-ready PDF, and replication archive. |
+| **Zenodo Sealed Package (v1.1)** | [doi.org/10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) | Permanent immutable v1.1 DOI (Concept: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625)). |
 | **📄 arXiv Submission Package** | [`arxiv/`](arxiv/) | Camera-ready 2-column LaTeX manuscript, 300 DPI 158K connectome projection, and `.tar.gz`/`.zip` bundles. |
 
 ---
@@ -149,8 +149,8 @@ Dağhan Dağlı 1,*, Volkan Dağlı 2,3,†, Zerrin Dağlı 4,5
 ## 📄 Scientific Paper & Citation
 
 * **Research Paper Manuscript:** [`bioneural_werr_drosophila_paper.md`](bioneural_werr_drosophila_paper.md)
-* **Camera-Ready PDF:** [`Bio_Synthetic_Neuromorphic_WerrSoma_Drosophila.pdf`](https://doi.org/10.5281/zenodo.22996626)
-* **Permanent DOI:** [10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626)
+* **Camera-Ready PDF:** [`Bio_Synthetic_Neuromorphic_WerrSoma_Drosophila.pdf`](https://doi.org/10.5281/zenodo.23072929)
+* **Permanent Version DOI:** [10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) *(Concept/Latest DOI: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625))*
 
 ```bibtex
 @article{dagli2026werrsoma,
@@ -158,8 +158,8 @@ Dağhan Dağlı 1,*, Volkan Dağlı 2,3,†, Zerrin Dağlı 4,5
   author  = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
   journal = {Zenodo Preprint (Target: Nature Neuroscience / IEEE TBME)},
   year    = {2026},
-  doi     = {10.5281/zenodo.22996626},
-  url     = {https://doi.org/10.5281/zenodo.22996626}
+  doi     = {10.5281/zenodo.23072929},
+  url     = {https://doi.org/10.5281/zenodo.23072929}
 }
 ```
 

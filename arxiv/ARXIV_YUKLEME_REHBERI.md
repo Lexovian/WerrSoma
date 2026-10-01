@@ -78,8 +78,9 @@ TURKPATENT-TR-2026-016633
 
 ### 📌 DOI (Zenodo Kalıcı Dijital Nesne Tanımlayıcısı)
 ```text
-10.5281/zenodo.22996626
+10.5281/zenodo.23072929
 ```
+*(Not: Çatı/Concept DOI olan `10.5281/zenodo.22996625` de kullanılabilir; her ikisi de doğrudan yayına yönlendirir).*
 
 ---
 
