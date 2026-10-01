@@ -79,7 +79,7 @@ By mapping incoming sensory telemetry onto localized coordinate perturbations $\
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/fig1_werrsoma_architecture.png}
+    \includegraphics[width=0.95\textwidth]{fig1_werrsoma_architecture.png}
     \caption{\textbf{System Architecture of the WerrSoma Bio-Synthetic Interface.} The implantable 1,024-pin WERR silicon coprocessor (left) evaluates Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$) in $0.461$~ms with zero VRAM overhead, routing multi-sector stimulation pulses across a $32 \times 32$ micro-electrode array. Four biocompatible polyimide shanks (center) penetrate the dorsal cranial surface to interface with the 158,262-neuron Princeton FlyWire connectome (right), targeting the Ellipsoid Body (EB) heading ring attractor, the Descending Motor Neuron (DN) pool, and the bilateral Mushroom Bodies (MB), while recruiting endogenous GABAergic counter-regulation ($38.58\%$) to prevent excitotoxic runaway.}
     \label{fig:architecture}
 \end{figure*}
@@ -106,7 +106,7 @@ To achieve sub-millisecond graph traversal without GPU acceleration, $\mathcal{G
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/fig2_connectome_atlas_projection.png}
+    \includegraphics[width=0.95\textwidth]{fig2_connectome_atlas_projection.png}
     \caption{\textbf{Stereotaxic Anatomical Projection of the 158,262-Neuron \textit{Drosophila} Connectome and Penetrating Shanks.} \textbf{(a)} Coronal anterior projection ($X\text{--}Y$ plane, $\mu\text{m}$) rendered directly from the empirical FlyWire coordinate cache (\texttt{drosophila\_full\_158k\_cache.npz}), illustrating the dorsal WERR 1,024-pin silicon chip ($76 \times 40\ \mu\text{m}$) at $y = 115\ \mu\text{m}$ and the four penetrating polyimide micro-shanks targeting the Ellipsoid Body (EB, red, $368$ neurons), Descending Motor Neurons (DN, green, $1,316$ neurons), and bilateral Mushroom Bodies (MB, purple, $4,270$ neurons). \textbf{(b)} Horizontal dorsal projection ($X\text{--}Z$ plane, $\mu\text{m}$) highlighting the bilateral organization of the MB calyces, central EB ring attractor, and cervical DN motor output.}
     \label{fig:connectome_atlas}
 \end{figure*}
@@ -206,7 +206,7 @@ A primary failure mode of high-speed neural prosthetics is the induction of runa
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{figures/fig3_homeostatic_gaba_and_latency.png}
+    \includegraphics[width=\columnwidth]{fig3_homeostatic_gaba_and_latency.png}
     \caption{\textbf{Homeostatic Clamping and Reflex Latency.} \textbf{(a)} Endogenous GABAergic interneurons recruit a $38.58\%$ inhibitory counter-current that clamps membrane depolarization at $-53.93$~mV (green), preventing runaway epileptiform seizure activity above $-35.0$~mV (red dashed). \textbf{(b)} End-to-end closed-loop reflex latency totals $3.671$~ms, well below the $5.0$~ms biological escape ceiling.}
     \label{fig:homeostasis_latency}
 \end{figure}
@@ -223,7 +223,7 @@ To rigorously test whether high-frequency synthetic decisions risk ``burning out
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{figures/fig4_bioenergetics_and_fault_tolerance.png}
+    \includegraphics[width=\columnwidth]{fig4_bioenergetics_and_fault_tolerance.png}
     \caption{\textbf{Bio-Energetic Safety Envelope and Electrode Fault Tolerance.} \textbf{(a)} Metabolic power ($\mu\text{W}$, blue) and excitotoxic burnout risk (red) across stimulation frequencies, establishing a safe continuous operating ceiling at $f_{\max} = 265$~Hz (green shaded region). \textbf{(b)} Directional motor fidelity across progressive electrode pin dropout ($0\%\text{--}75\%$) under clean and $15$~Hz Poisson noise conditions.}
     \label{fig:bioenergetics_dropout}
 \end{figure}

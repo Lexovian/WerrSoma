@@ -11,37 +11,66 @@ arXiv yükleme ekranında (**Add Files** adımında) aşağıdaki iki arşiv dos
 1. **`werrsoma_arxiv_package.tar.gz`** *(Önerilen Standart Unix/arXiv Formatı — ~631 KB)*
 2. **`werrsoma_arxiv_package.zip`** *(Alternatif ZIP Formatı — ~630 KB)*
 
-### Arşiv İçeriği (Kök Dizinde Doğrudan Yer Alan Dosyalar):
+### Arşiv İçeriği (Kök Dizinde Doğrudan Yer Alan 5 Dosya):
 - `main.tex` — `\pdfoutput=1` direktifli, 2 sütunlu IEEE/Nature akademik formatında, tüm referansları (`\begin{thebibliography}{99}`) kendi içinde gömülü (self-contained), %100 7-bit saf LaTeX uyumlu ana makale dosyası.
-- `figures/fig1_werrsoma_architecture.png` — 300 DPI vektörel kalitede WerrSoma 1.024-pin silikon yardımcı işlemci + 4 poliimid mikro-şaft + 158.262 nöronluk FlyWire konnektom mimari şeması.
-- `figures/fig2_connectome_atlas_projection.png` — 300 DPI gerçek 158.262 nöronluk FlyWire konnektom verisinden (`drosophila_full_158k_cache.npz`) üretilen Koronal Ön ($X\text{--}Y$) ve Yatay Dorsal ($X\text{--}Z$) anatomik projeksiyonlar ile dorsal WERR çipi ve 4 penetran şaftın stereotaksik hedefleri (EB, DN, Bilateral MB).
-- `figures/fig3_homeostatic_gaba_and_latency.png` — 300 DPI biyolojik GABAerjik homeostatik frenleme ($-53.93\text{ mV}$) ve $3.671\text{ ms}$ uçtan uca refleks gecikme grafiği.
-- `figures/fig4_bioenergetics_and_fault_tolerance.png` — 300 DPI ATP biyo-enerjetik / nöron yanması (burnout) güvenlik zarfı ($f_{\max} = 265\text{ Hz}$) ve %0–%75 elektrot pin kopması (fault tolerance) grafiği.
+- `fig1_werrsoma_architecture.png` — 300 DPI vektörel kalitede WerrSoma 1.024-pin silikon yardımcı işlemci + 4 poliimid mikro-şaft + 158.262 nöronluk FlyWire konnektom mimari şeması.
+- `fig2_connectome_atlas_projection.png` — 300 DPI gerçek 158.262 nöronluk FlyWire konnektom verisinden (`drosophila_full_158k_cache.npz`) üretilen Koronal Ön ($X\text{--}Y$) ve Yatay Dorsal ($X\text{--}Z$) anatomik projeksiyonlar ile dorsal WERR çipi ve 4 penetran şaftın stereotaksik hedefleri (EB, DN, Bilateral MB).
+- `fig3_homeostatic_gaba_and_latency.png` — 300 DPI biyolojik GABAerjik homeostatik frenleme ($-53.93\text{ mV}$) ve $3.671\text{ ms}$ uçtan uca refleks gecikme grafiği.
+- `fig4_bioenergetics_and_fault_tolerance.png` — 300 DPI ATP biyo-enerjetik / nöron yanması (burnout) güvenlik zarfı ($f_{\max} = 265\text{ Hz}$) ve %0–%75 elektrot pin kopması (fault tolerance) grafiği.
+
+---
+
+## ⚠️ "Missing files or top-level files" Hatası Neden Olur ve Nasıl Çözülür?
+
+arXiv ekranında **`Error: Missing files or top-level files`** hatası alınmasının %99 iki sebebi vardır:
+
+1. **"Upload File" Butonuna Basmadan "Continue" Denmesi (En Sık Yapılan UI Tuzağı):**
+   arXiv dosya yönetim ekranında "Dosya Seç / Browse" diyerek `.tar.gz` veya dosyaları seçtikten sonra, **hemen yanındaki "Upload File" (Dosyayı Yükle) butonuna tıklamak ŞARTTIR**. 
+   Eğer dosya seçildikten sonra "Upload File" butonuna basılmadan doğrudan sayfanın altındaki "Continue / Process Files" butonuna basılırsa; dosya sunucuya henüz yüklenmediği için arXiv sunucusundaki çalışma alanı boş kalır ve sunucu *"Missing files"* hatası fırlatır.
+
+2. **Arşiv İçi Alt Klasör (Subfolder) Karmaşası:**
+   Eğer bir klasör Windows'ta "Sağ tık -> Sıkıştır" ile zip yapılırsa arşiv içinde `arxiv/main.tex` gibi bir alt klasör oluşabilir. arXiv ise `main.tex`'in en üst kök dizinde (top-level) olmasını bekler. Bizim oluşturduğumuz `werrsoma_arxiv_package.tar.gz` dosyasında tüm dosyalar en üst köktedir.
+
+### 🎯 Kesin Çözüm (İki Güvenli Yoldan Biri):
+
+#### YOL 1 (En Kolay ve Garantili — Doğrudan 5 Dosyayı Yüklemek):
+Hiç zip/tar ile uğraşmadan:
+1. arXiv dosya ekranında varsa eski dosyaları silin (Delete/Clear).
+2. **"Browse / Dosya Seç"** diyerek `WerrSoma/arxiv/` klasöründeki şu **5 dosyayı** birlikte seçin:
+   - `main.tex`
+   - `fig1_werrsoma_architecture.png`
+   - `fig2_connectome_atlas_projection.png`
+   - `fig3_homeostatic_gaba_and_latency.png`
+   - `fig4_bioenergetics_and_fault_tolerance.png`
+3. **"Upload files"** butonuna basın.
+4. Ekranda 5 dosyanın da yeşil/listelenmiş olarak göründüğünden emin olun.
+5. Şimdi **"Continue / Process Files"** butonuna basın.
+
+#### YOL 2 (Hazır Paket ile):
+1. `werrsoma_arxiv_package.tar.gz` dosyasını seçin.
+2. Mutlaka **"Upload file"** butonuna tıklayın.
+3. arXiv paketi açacak ve ekrandaki tabloda `main.tex` ile 4 adet `.png` dosyasını listeleyecektir.
+4. Dosyaları listede gördükten sonra **"Continue / Process Files"** butonuna basın.
 
 ---
 
 ## 🚀 2. Adım Adım arXiv Yükleme İşlemi (`https://arxiv.org/submit`)
 
 ### Adım 1: Başlangıç ve Kategori Seçimi (Start & Subject Category)
-1. [https://arxiv.org/submit](https://arxiv.org/submit) adresine giriş yapın ve **"Start New Submission"** butonuna tıklayın.
+1. [https://arxiv.org/submit](https://arxiv.org/submit) adresine giriş yapın ve mevcut başvurunuzu güncelliyorsanız başvurunun yanındaki **"Edit / Replace"** (veya sıfırdan yapıyorsanız **"Start New Submission"**) bağlantısına tıklayın.
 2. **Primary Category (Ana Kategori):**
-   - **`q-bio.NC`** (*Quantitative Biology -> Neurons and Cognition*) **VEYA**
-   - **`cs.NE`** (*Computer Science -> Neural and Evolutionary Computing*)
-   *(Not: Hesabınızın mevcut endorsement/onay durumuna göre `cs.NE` veya `q-bio.NC` seçebilirsiniz; diğerini hemen altındaki Cross-List bölümünden ekleyin).*
-3. **Cross-List Categories (Çapraz Kategoriler — İsteğe Bağlı ama Önerilir):**
-   - **`cs.NE`** (*Neural and Evolutionary Computing*)
-   - **`q-bio.NC`** (*Neurons and Cognition*)
-   - **`cs.AI`** (*Artificial Intelligence*)
-   - **`cs.RO`** (*Robotics*)
+   - **`cs.NE`** (*Neural and Evolutionary Computing*) VEYA **`q-bio.NC`** (*Neurons and Cognition*)
+3. **Cross-List Categories:**
+   - **`cs.AI`**, **`cs.RO`**, **`q-bio.NC`**
 
 ### Adım 2: Lisans Seçimi (License)
-- **`CC BY 4.0`** (*Creative Commons Attribution 4.0 International*) seçin (Zenodo arşivimiz ve açık bilim standartlarımızla birebir uyumludur).
+- **`CC BY 4.0`** (*Creative Commons Attribution 4.0 International*) seçin.
 
 ### Adım 3: Dosya Yükleme ve Derleme (Add Files & Process)
-1. **"Upload Files"** ekranında `werrsoma_arxiv_package.tar.gz` (veya `werrsoma_arxiv_package.zip`) dosyasını seçip yükleyin.
+1. Yukarıdaki **YOL 1** veya **YOL 2**'yi uygulayın.
 2. **"Continue / Process Files"** butonuna tıklayın.
-3. arXiv'in **AutoTeX** sistemi `\pdfoutput=1` komutunu görünce otomatik olarak `pdflatex` çalıştıracak ve PDF'i üretecektir.
-4. **"View PDF"** butonuna tıklayarak 2 sütunlu makaleyi, 4 yüksek çözünürlüklü şekli ve 2 tabloyu kontrol edip onaylayın.
+3. arXiv'in **AutoTeX** sistemi `\pdfoutput=1` direktifini görünce otomatik olarak `pdflatex` çalıştıracak ve PDF'i başarıyla üretecektir.
+4. **"View PDF"** butonuna tıklayarak derlenen makaleyi inceleyin.
 
 ---
 

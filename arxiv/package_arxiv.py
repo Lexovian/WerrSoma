@@ -13,10 +13,10 @@ TEX_PATH = os.path.join(BASE_DIR, "main.tex")
 
 REQUIRED_FILES = [
     "main.tex",
-    "figures/fig1_werrsoma_architecture.png",
-    "figures/fig2_connectome_atlas_projection.png",
-    "figures/fig3_homeostatic_gaba_and_latency.png",
-    "figures/fig4_bioenergetics_and_fault_tolerance.png",
+    "fig1_werrsoma_architecture.png",
+    "fig2_connectome_atlas_projection.png",
+    "fig3_homeostatic_gaba_and_latency.png",
+    "fig4_bioenergetics_and_fault_tolerance.png",
 ]
 
 
@@ -96,11 +96,19 @@ def build_archives() -> None:
         abs_path = os.path.join(BASE_DIR, rel_path)
         assert os.path.isfile(abs_path), f"Missing required file: {rel_path}"
 
+    def reset_tarinfo(tarinfo):
+        tarinfo.uid = 0
+        tarinfo.gid = 0
+        tarinfo.uname = ""
+        tarinfo.gname = ""
+        tarinfo.mode = 0o644
+        return tarinfo
+
     tar_path = os.path.join(BASE_DIR, "werrsoma_arxiv_package.tar.gz")
-    with tarfile.open(tar_path, "w:gz") as tar:
+    with tarfile.open(tar_path, "w:gz", format=tarfile.GNU_FORMAT) as tar:
         for rel_path in REQUIRED_FILES:
             abs_path = os.path.join(BASE_DIR, rel_path)
-            tar.add(abs_path, arcname=rel_path)
+            tar.add(abs_path, arcname=rel_path, filter=reset_tarinfo)
 
     zip_path = os.path.join(BASE_DIR, "werrsoma_arxiv_package.zip")
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
