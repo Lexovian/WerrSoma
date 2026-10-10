@@ -5,8 +5,10 @@
   <a href="https://werrsoma.answerr.me/"><img src="https://img.shields.io/badge/Live%20Portal-werrsoma.answerr.me-00f0ff" alt="Live Portal"></a>
   <a href="arxiv/"><img src="https://img.shields.io/badge/arXiv-Ready%20Package-b31b1b.svg" alt="arXiv Package"></a>
   <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
+  <a href="https://github.com/Lexovian/WerrSoma"><img src="https://img.shields.io/badge/Canonical%20Repo-Lexovian%2FWerrSoma-181717.svg?logo=github" alt="Canonical Repo"></a>
+  <a href="https://github.com/pCwOrM/WerrSoma"><img src="https://img.shields.io/badge/Mirror-pCwOrM%2FWerrSoma-blue.svg?logo=github" alt="Mirror Repo"></a>
   <a href="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml"><img src="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml/badge.svg" alt="Scientific CI"></a>
-  <img src="https://img.shields.io/badge/License-BSL%201.1-green.svg" alt="License: BSL 1.1">
+  <img src="https://img.shields.io/badge/License-BSL%201.1%20%2F%20BBL%20v1.0-green.svg" alt="License: BSL 1.1 / BBL v1.0">
   <img src="https://img.shields.io/badge/Dataset-Princeton%20FlyWire%20EM-emerald.svg" alt="Princeton FlyWire">
   <img src="https://img.shields.io/badge/Connectome-158%2C262%20Neurons-blueviolet.svg" alt="158,262 Neurons">
   <img src="https://img.shields.io/badge/Latency-3.67%20ms%20Reflex-red.svg" alt="3.67 ms Reflex Latency">
@@ -190,9 +192,11 @@ WerrSoma represents Paper 6 in the unified open-science corpus spanning fractal 
 
 ---
 
-## 📜 License & Patent Notice
+## 📜 License, Trademark & Patent Notice
 
-This software is dual-licensed under the **[Business Source License 1.1 (BSL 1.1)](LICENSE)**:
-* **Academic, Educational, and Non-Commercial Research Use:** 100% Free and open for non-commercial research, peer-review replication, and benchmarking.
-* **Commercial Restriction:** Any deployment in commercial brain-computer interfaces (BCI), neuroprosthetics, commercial robotics/drones, or paid APIs requires a written Commercial License from the Licensors.
+This software and its bio-synthetic neuromorphic interfaces are dual-licensed under the **[Business Source License 1.1 (BSL 1.1)](LICENSE)** and the **BBL v1.0 (Barış, Bilim, Liyakat)** ethical charter:
+* **Academic, Educational, and Non-Commercial Research Use:** 100% Free and open for non-commercial research, peer-review replication, student inquiry, and open-science benchmarking. All underlying mathematical proofs, formal topological theorems, and open preprints remain universal public knowledge.
+* **Corporate Stewardship & Trademark Protection:** **WerrSoma™**, **WERR™**, and **answerr™** are trademarks protected under corporate stewardship of **ITouch Systems** (ITouch Bilişim Sistemleri Mühendislik Danışmanlık San. ve Tic. Ltd. Şti., Çukurova Teknokent).
+* **Commercial Restriction:** Any deployment in commercial brain-computer interfaces (BCI), neuroprosthetics, commercial robotics/drones, hosted SaaS, or paid APIs requires an express written Commercial License from ITouch Systems.
+* **Change Date:** On **2030-01-01**, this repository automatically converts to the permissive **Apache License, Version 2.0**.
 * **Patent Protection:** Key neuromorphic coprocessor architectures, whole-brain connectome steering methods, and biophysical anti-burnout gating mechanisms are officially subject to national priority patent application **TÜRKPATENT TR 2026/016633** (Official Priority Date: September 27, 2026, 06:16:04 UTC+3) and upcoming international PCT applications under the Paris Convention.
