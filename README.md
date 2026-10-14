@@ -22,6 +22,7 @@
   <a href="https://github.com/pCwOrM/niemeier-a8-umbral-moonshine"><img src="https://img.shields.io/badge/Sister%20Repo-Niemeier%20A8%5E3%20Moonshine-024dad.svg" alt="Niemeier A8^3 Moonshine"></a>
   <a href="https://github.com/pCwOrM/integer-mult-bounds"><img src="https://img.shields.io/badge/Sister%20Repo-Sch%C3%B6nhage%20Record-brightgreen.svg" alt="Schönhage Record"></a>
   <a href="https://github.com/CrocSwap/integer-mult-bounds/blob/50d768818f579d4e165b4c257c6ee25bca300802/docs/research/community-reconciliation-next100-review.md"><img src="https://img.shields.io/badge/CrocSwap%20Main-PR%20%23226%20Incorporated%20(50d76881)-brightgreen.svg" alt="CrocSwap PR #226 Incorporated"></a>
+  <a href="https://arxiv.org/abs/2610.14263"><img src="https://img.shields.io/badge/arXiv-2610.14263%20(Sch%C3%B6nhage%20Tensor)-b31b1b.svg" alt="arXiv 2610.14263"></a>
 </p>
 
 > **Integration of a Zero-Memory Fractal Decision Engine (WERR) with the Complete Whole-Brain *Drosophila Melanogaster* Connectome.**
