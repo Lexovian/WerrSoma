@@ -8,7 +8,7 @@
   <a href="https://github.com/Lexovian/WerrSoma"><img src="https://img.shields.io/badge/Canonical%20Repo-Lexovian%2FWerrSoma-181717.svg?logo=github" alt="Canonical Repo"></a>
   <a href="https://github.com/pCwOrM/WerrSoma"><img src="https://img.shields.io/badge/Mirror-pCwOrM%2FWerrSoma-blue.svg?logo=github" alt="Mirror Repo"></a>
   <a href="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml"><img src="https://github.com/Lexovian/WerrSoma/actions/workflows/ci.yml/badge.svg" alt="Scientific CI"></a>
-  <img src="https://img.shields.io/badge/License-BSL%201.1%20%2F%20BBL%20v1.0-green.svg" alt="License: BSL 1.1 / BBL v1.0">
+  <img src="https://img.shields.io/badge/License-BSL%201.1%20(ITouch%20Systems)-green.svg" alt="License: BSL 1.1 (ITouch Systems)">
   <img src="https://img.shields.io/badge/Dataset-Princeton%20FlyWire%20EM-emerald.svg" alt="Princeton FlyWire">
   <img src="https://img.shields.io/badge/Connectome-158%2C262%20Neurons-blueviolet.svg" alt="158,262 Neurons">
   <img src="https://img.shields.io/badge/Latency-3.67%20ms%20Reflex-red.svg" alt="3.67 ms Reflex Latency">
