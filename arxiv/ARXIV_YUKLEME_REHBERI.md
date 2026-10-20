@@ -85,7 +85,7 @@ Bio-Synthetic Neuromorphic Interfacing: Integration of a Zero-Memory Fractal Dec
 
 ### 📌 Authors (Yazarlar)
 ```text
-Dağhan Dağlı, Volkan Dağlı, Zerrin Dağlı
+Dağhan Dağlı, Volkan Dağlı, Dr. Zerrin Dağlı
 ```
 
 ### 📌 Abstract (Özet — arXiv 1.920 Karakter Sınırına %100 Uyumlu: 1.682 Karakter)

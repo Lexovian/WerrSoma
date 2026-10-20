@@ -3,7 +3,7 @@
 **Authors:**  
 **Dağhan Dağlı**$^{1,*}$ (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
 **Volkan Dağlı**$^{2,3,\dagger}$ (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
-**Zerrin Dağlı**$^{4,5}$ (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
+**Dr. Zerrin Dağlı**$^{4,5}$ (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
 
 **Affiliations:**  
 $^1$ *Toros Science High School, Mersin Education Foundation (Toros University), Türkiye*  
