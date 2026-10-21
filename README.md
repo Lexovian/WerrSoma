@@ -24,6 +24,11 @@
   <a href="https://github.com/CrocSwap/integer-mult-bounds/blob/50d768818f579d4e165b4c257c6ee25bca300802/docs/research/community-reconciliation-next100-review.md"><img src="https://img.shields.io/badge/CrocSwap%20Main-PR%20%23226%20Incorporated%20(50d76881)-brightgreen.svg" alt="CrocSwap PR #226 Incorporated"></a>
   <a href="https://arxiv.org/abs/2610.14263"><img src="https://img.shields.io/badge/arXiv-2610.14263%20(Sch%C3%B6nhage%20Tensor)-b31b1b.svg" alt="arXiv 2610.14263"></a>
   <a href="https://github.com/pCwOrM/WERRobotics"><img src="https://img.shields.io/badge/WERRobotics-Arduino%20%26%20Edge%20AI-ff9100.svg?logo=arduino&logoColor=white" alt="WERRobotics Edge AI"></a>
+  <a href="https://werr.io/"><img src="https://img.shields.io/badge/Academic%20Portal-werr.io-0284c7.svg?logo=cloudflare&logoColor=white" alt="werr.io Portal"></a>
+  <a href="https://werracle.io/"><img src="https://img.shields.io/badge/Web3%20Protocol-werracle.io-f59e0b.svg?logo=cloudflare&logoColor=white" alt="werracle.io Protocol"></a>
+  <a href="https://werracle.com/"><img src="https://img.shields.io/badge/Corporate%20Portal-werracle.com-2b3bd1.svg?logo=cloudflare&logoColor=white" alt="werracle.com Corporate"></a>
+  <a href="https://github.com/pCwOrM/werr-elliptic-sieve"><img src="https://img.shields.io/badge/Sister%20Repo-NSF%20ICARM%20Elliptic%20Sieve%20(230%20Curves)-blue" alt="NSF ICARM Elliptic Sieve"></a>
+  <a href="https://werracle.com/"><img src="https://img.shields.io/badge/Cloud%20Vault-Cloudflare%20R2%20Active-f38020.svg?logo=cloudflare&logoColor=white" alt="Cloud Vault R2"></a>
 </p>
 
 > **Integration of a Zero-Memory Fractal Decision Engine (WERR) with the Complete Whole-Brain *Drosophila Melanogaster* Connectome.**
