@@ -8,7 +8,7 @@
 **Affiliations:**  
 $^1$ *Toros Science High School, Mersin Education Foundation (Toros University), Türkiye*  
 $^2$ *Anadolu University, Türkiye*  
-$^3$ *ITouch Systems, Çukurova Teknokent, Türkiye*  
+$^3$ *ITouch Systems, Çukurova Üniversitesi Teknokent, Adana, Türkiye*  
 $^4$ *Mersin University, Türkiye*  
 $^5$ *Yusuf Kalkavan Anatolian High School, Türkiye*  
 

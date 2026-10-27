@@ -353,7 +353,7 @@ python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
 ```
 
 > 🌐 **Ekosistem Entegrasyonu:**  
-> - **İnteraktif Web 1v1 Arenası:** Dokunmatik mobil D-pad, kaydırma jestleri ve insan-fraktal otopilot içeren tarayıcı arayüzü temel araştırma deposunda yer alır: [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html).  
+> - **İnteraktif Web 1v1 Arenası:** Dokunmatik mobil D-pad, kaydırma jestleri ve insan-fraktal otopilot içeren tarayıcı arayüzü temel araştırma deposunda yer alır: [`fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/fractal-neural-synthesis/demos/snake.html).  
 > - **Bulut Refleks Ağ Geçidi:** Uzak web ajanları ve servisler için kararlar [`answerr`](https://github.com/pCwOrM/answerr) üzerindeki `POST /v1/systemone` uç noktasından (`https://api.answerr.me:4431`) canlı olarak sunulur.
 
 ---
@@ -418,7 +418,7 @@ werr attacker    # Engellendi (Anlık omurilik refleksi)
 
 ## 🔗 Ekosistem Mimarisi ve Kardeş Depo Bağlantıları
 
-1. **Temel Bilimsel Teori ve İnteraktif İstemci Laboratuvarları:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
+1. **Temel Bilimsel Teori ve İnteraktif İstemci Laboratuvarları:** [`fractal-neural-synthesis`](https://github.com/pCwOrM/fractal-neural-synthesis)  
    Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
 
 2. **Makine-Yerel Refleks Motoru ve Kıyaslama Paketleri (Bu Depo):** [`werr`](https://github.com/pCwOrM/werr)  
@@ -517,7 +517,7 @@ WERR, bağımsız ve patent korumalı açık kaynaklı matematiksel yapay zekâ 
 | Kanal / Platform | Ağ (Network) | Alıcı Cüzdan Adresi |
 | :--- | :--- | :--- |
 | **Resmi Cüzdan (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPSBgLJu` |
-| **Resmi Tüzel Kişilik** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
+| **Resmi Tüzel Kişilik** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Üniversitesi Teknokent) |
 
 * **Resmi İletişim Kanalları:** `vdagli@itouch.com.tr` (Kurumsal) | `pcworm@pcworm.net` (Baş Araştırmacı) | `ask@answerr.me` (Otonom Ajan) | Web: `https://answerr.me`
 

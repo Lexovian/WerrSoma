@@ -486,7 +486,7 @@ python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
 ```
 
 > 🌐 **Cross-Repository Ecosystem Integration:**  
-> - **Interactive Browser 1v1 Arena:** Explore the web GUI with mobile touch D-pad, swipe gestures, and human-vs-fractal autopilot in [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html).  
+> - **Interactive Browser 1v1 Arena:** Explore the web GUI with mobile touch D-pad, swipe gestures, and human-vs-fractal autopilot in [`fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/fractal-neural-synthesis/demos/snake.html).  
 > - **Cloud Reflex Gateway:** Stream decisions to remote agents via [`answerr`](https://github.com/pCwOrM/answerr) over `POST /v1/systemone` at `https://api.answerr.me:4431`.
 
 ---
@@ -646,7 +646,7 @@ werr             # Interactive terminal simulator
 
 ## 🔗 Ecosystem Architecture & Connections
 
-1. **Foundational Scientific Theory & Interactive Client Labs:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
+1. **Foundational Scientific Theory & Interactive Client Labs:** [`fractal-neural-synthesis`](https://github.com/pCwOrM/fractal-neural-synthesis)  
    The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
 
 2. **Machine-Native Reflex Engine & Benchmarks (This Repository):** [`werr`](https://github.com/pCwOrM/werr)  
@@ -724,7 +724,7 @@ WERR is an independent, patented open-source mathematical AI research project. C
 | Channel / Platform | Network | Receiving Address |
 | :--- | :--- | :--- |
 | **Official Wallet (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPSBgLJu` |
-| **Official Corporate Entity** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
+| **Official Corporate Entity** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Üniversitesi Teknokent) |
 
 * **Official Contacts:** `vdagli@itouch.com.tr` (Corporate) | `pcworm@pcworm.net` (Lead Research) | `ask@answerr.me` (Autonomous Agent) | Web: `https://answerr.me`
 
