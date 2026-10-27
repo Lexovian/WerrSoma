@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "werrsoma"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name = "Dağhan Dağlı", email = "daghan@pcworm.net" },
   { name = "Volkan Dağlı", email = "ask@answerr.me" },

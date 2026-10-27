@@ -57,7 +57,7 @@ def run_stage_1_compatibility(data, verbose=True):
     # Simulation time steps (e.g. 50 ms in 1 ms steps)
     dt = 1.0  # ms
     steps = 50
-    engine = werr.WerrEngine(tripod=True, mode="resonance")
+    engine = werr.create_bioneural_reflex(resolution=24, max_iter=24) if hasattr(werr, "create_bioneural_reflex") else werr.create_smart_router(resolution=24, max_iter=24)
 
     # Baseline resting potentials
     potentials = {n["id"]: float(n["potential"]) for n in data["nodes"]}
@@ -175,7 +175,7 @@ def run_stage_2_motor_execution(data, verbose=True):
         {"name": "İleri Hızlı Kanat Çırpma (High Velocity Flight)", "intent_vector": [0.0, 1.8, 1.2]}
     ]
 
-    engine = werr.WerrEngine(tripod=True, mode="resonance")
+    engine = werr.create_bioneural_reflex(resolution=24, max_iter=24) if hasattr(werr, "create_bioneural_reflex") else werr.create_smart_router(resolution=24, max_iter=24)
     execution_results = []
 
     for tc in test_cases:
@@ -184,7 +184,7 @@ def run_stage_2_motor_execution(data, verbose=True):
         # 1. WERR Mandebrot Decision
         resp = engine.decide(
             state={"motor_intent": tc["name"], "risk_surge": 1.2},
-            questions={"fire_motor": werr.NoulQuestion(instructions=f"Execute {tc['name']}")}
+            questions={"fire_motor": werr.NoulQuestion(instructions=f"Authorize evasive motor reflex for {tc['name']}")}
         )
         decision = resp.boolean("fire_motor")
         confidence = resp.answers["fire_motor"].confidence

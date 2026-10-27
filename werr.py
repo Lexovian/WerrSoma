@@ -34,6 +34,8 @@ from werrengine.werr import (
     create_security_guard,
     create_smart_router,
     create_risk_evaluator,
+    create_fast_reflex,
+    create_bioneural_reflex,
 )
 
-__version__ = "0.5.0"
+__version__ = "0.5.2"

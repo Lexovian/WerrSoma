@@ -1,6 +1,7 @@
 """
 werr: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 Open-source machine-native intuitive decision framework for software.
+Synchronized with GAP-0331 Z/nZ Constructive Modular Arithmetic & Invariants.
 """
 
 from werr.datatypes import (
@@ -19,6 +20,8 @@ from werr.presets import (
     create_security_guard,
     create_smart_router,
     create_risk_evaluator,
+    create_fast_reflex,
+    create_bioneural_reflex,
 )
 from werr.router import AutoSeedRouter
 from werr.gates import (
@@ -33,7 +36,16 @@ from werr.gates import (
 
 from werr.adapters import JevWireAdapter
 
-__version__ = "0.5.0"
+from werr.modular_algebra import (
+    constructive_extended_gcd,
+    constructive_inverse_mod,
+    is_unit_mod9,
+    is_resonant_subideal_i3,
+    neutralize_modular_perturbation,
+    verify_gap0331_invariants,
+)
+
+__version__ = "0.5.2"
 __all__ = [
     "WerrEngine",
     "WevvEngine",
@@ -58,4 +70,11 @@ __all__ = [
     "create_security_guard",
     "create_smart_router",
     "create_risk_evaluator",
+    # GAP-0331 Constructive Modular Invariants
+    "constructive_extended_gcd",
+    "constructive_inverse_mod",
+    "is_unit_mod9",
+    "is_resonant_subideal_i3",
+    "neutralize_modular_perturbation",
+    "verify_gap0331_invariants",
 ]
