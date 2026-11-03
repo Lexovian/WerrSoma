@@ -35,7 +35,7 @@
 
 **WerrSoma** couples the complete 158,262-neuron, 3.99-million synapse electron-microscopy biological connectome of the adult fruit fly (*Drosophila melanogaster*, Princeton FlyWire) with an implantable 1,024-pin **WERR neuromorphic fractal coprocessor**. 
 
-Rather than deploying heavyweight, power-hungry deep learning models or spiking transformers that suffer from high latency ($15-200\text{ ms}$) and VRAM bloat, WerrSoma utilizes **deterministic chaotic Mandelbrot boundary escape trajectories ($\partial \mathcal{M}$)** to synthesize directional flight decisions and motor overrides in **$< 0.5\text{ ms}$** with **$0\text{ Bytes}$ of VRAM**.
+Rather than deploying heavyweight, power-hungry deep learning models or spiking transformers that suffer from high latency ($15-200\text{ ms}$) and VRAM bloat, WerrSoma utilizes **procedural boundary dynamics and deterministic polynomial escape trajectories ($\partial \mathcal{M}$)** to synthesize directional flight decisions and motor overrides in **$< 0.5\text{ ms}$** with **$0\text{ Bytes}$ of VRAM**.
 
 ---
 
@@ -84,7 +84,7 @@ python bioneural_fly_app.py
 ```mermaid
 graph LR
     subgraph WERR_Silicon_Implant [WERR 1,024-Pin Silicon Coprocessor]
-        Mandelbrot_Core[Mandelbrot Boundary Core z -> z^2 + c] -->|dt < 0.5 ms| Pin_Grid[32x32 Micro-Electrode Pin Grid]
+        Mandelbrot_Core[Procedural Boundary Core z -> z^2 + c] -->|dt < 0.5 ms| Pin_Grid[32x32 Micro-Electrode Pin Grid]
     end
 
     subgraph Penetrating_Shanks [4 Penetrating Biocompatible Leads]

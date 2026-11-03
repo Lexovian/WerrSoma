@@ -24,7 +24,7 @@ Commercial cloud LLM infrastructure operates on a paradigm where every discrete 
 - Latencies ranging from 500 ms to 4,000 ms.
 - Ongoing API token costs ($0.01 to $1.00+ per 1,000 inferences).
 
-Werr was designed to provide an alternative: a **zero-memory (< 24 bytes seed), deterministic mathematical decision engine** executing numerical Mandelbrot boundary escape iterations on commodity CPUs in **sub-5 milliseconds** with **zero ongoing token cost ($0.0000)** and zero external cloud dependency.
+Werr was designed to provide an alternative: a **zero-memory (< 24 bytes seed), deterministic mathematical decision engine** executing numerical polynomial escape iterations along procedural boundary cusps on commodity CPUs in **sub-5 milliseconds** with **zero ongoing token cost ($0.0000)** and zero external cloud dependency.
 
 When evaluated on the public JevBench benchmark suite (231 tasks across Easy, Original, and Hard tiers), Werr demonstrated that edge heuristics and phase-resonance dynamics achieve competitive classification accuracy while operating orders of magnitude faster and at zero cost.
 
@@ -46,6 +46,9 @@ In established benchmarking protocols (aligned with MLCommons, NeurIPS Datasets 
 | **2026-09-21 22:59** | **Metric Revision (v1.3.0)** | Instead of running the queued submission under active v1.2 rules, maintainers pushed commit `75e6224` introducing JevBench v1.3.0, featuring an aggressive "near-chance penalty" curve specifically targeting tiers under 50% accuracy. |
 | **2026-09-22 06:12** | **Public Live Arena Deployed** | Interactive WebMCP & in-browser evaluation HUD released at [pcworm.github.io/werr](https://pcworm.github.io/werr/#benchmark-arena) allowing zero-install audit by any researcher. |
 | **2026-09-22 19:20** | **Dual-Standard Calibration** | Werr engine calibrated to decisively clear **both** v1.2 and v1.3 standards. |
+| **2026-10-07 09:33** | **Portal Intake Migration** | Maintainer standardized all model submissions through enchmarkheaven.com/submit. |
+| **2026-10-09 17:27** | **Formal Queue Intake** | Air-gapped WerrLocalAdapter submitted via Benchmark Heaven portal (Queue #50, Ref: 815FD9D8). |
+| **2026-10-28 16:54** | **Issue Resolution & Formal Closure** | Maintainer confirmed receipt and active handling of the Werr air-gapped submission in the Benchmark Heaven processing queue, closing Issue #10. |
 
 ---
 

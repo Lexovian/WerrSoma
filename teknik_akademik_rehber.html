@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr" class="dark">
 <head>
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/fns_logo_nav.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="manifest" href="../site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WerrSoma: Teknik & Akademik Açıklama Rehberi / Technical & Academic Whitepaper Guide</title>
@@ -240,7 +247,7 @@
 
     <!-- 2. Fraktal Karar Mekaniği -->
     <div class="card">
-      <h2>🌀 2. Sıfır-Bellekli Fraktal Karar Dinamiği (\(\partial\mathcal{M}\))</h2>
+      <h2>🌀 2. Sıfır-Bellekli Yordamsal Sınır Dinamiği ve Polinomiyal Kaçış (\(\partial\mathcal{M}\))</h2>
       <p>
         Geleneksel derin yapay sinir ağları (YSA) veya spiking transformatörler, yüksek bellek bant genişliği ve 15–200 ms çıkarım gecikmesine neden olur. WerrSoma, tensör matris çarpımlarını terk ederek karmaşık kuadratik polinom haritasının sınır dinamiklerini kullanır:
       </p>
@@ -248,7 +255,7 @@
         \[z_{n+1} = z_n^2 + c, \quad z_0 = 0, \quad c \in \mathbb{C}\]
       </div>
       <p>
-        Gelen duyu sinyalleri veya uçuş sapma vektörleri, karmaşık düzlemdeki \(c = c_r + i \cdot c_i\) koordinatını modüle eder. Mandelbrot kaçış sınırı (\(\partial\mathcal{M}\)) üzerinde yapılan iterasyon:
+        Gelen duyu sinyalleri veya uçuş sapma vektörleri, karmaşık düzlemdeki \(c = c_r + i \cdot c_i\) koordinatını modüle eder. Yordamsal sınır geometrisi ve polinomiyal kaçış dinamiği (\(\partial\mathcal{M}\)) üzerinde yapılan iterasyon:
       </p>
       <ul>
         <li><strong>Bellek Tüketimi:</strong> <strong>0 Bytes VRAM!</strong> (Ağırlık saklanmaz, durum hafızada tutulmaz).</li>
@@ -375,7 +382,7 @@
 
     <!-- 2. Zero-Memory Fractal Dynamics -->
     <div class="card">
-      <h2>🌀 2. Zero-Memory Fractal Decision Dynamics (\(\partial\mathcal{M}\))</h2>
+      <h2>🌀 2. Zero-Memory Procedural Boundary Dynamics & Polynomial Escape (\(\partial\mathcal{M}\))</h2>
       <p>
         Conventional deep neural networks (DNNs) and spiking transformers suffer from memory-wall bottlenecks and 15–200 ms inference latency. WerrSoma dispenses with parameter weight matrices, relying exclusively on chaotic boundary transitions over the complex quadratic polynomial:
       </p>
@@ -383,7 +390,7 @@
         \[z_{n+1} = z_n^2 + c, \quad z_0 = 0, \quad c \in \mathbb{C}\]
       </div>
       <p>
-        Sensory kinematic inputs modulate the complex coordinate \(c = c_r + i \cdot c_i\). Boundary iteration on \(\partial\mathcal{M}\) produces:
+        Sensory kinematic inputs modulate the complex coordinate \(c = c_r + i \cdot c_i\). Procedural boundary iteration on \(\partial\mathcal{M}\) evaluates polynomial escape dynamics, producing:
       </p>
       <ul>
         <li><strong>Memory Footprint:</strong> <strong>0 Bytes VRAM!</strong> (No weights stored, stateless inference).</li>
