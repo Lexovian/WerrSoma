@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-03 16:03:40",
+  "timestamp": "2026-11-03 16:28:13",
   "dataset": {
     "source": "Princeton FlyWire Whole-Brain Connectome",
     "biological_neurons": 158262,
@@ -9,10 +9,10 @@
   "experiment_1_synaptic_fidelity": {
     "trials": 300,
     "transmission_fidelity_percent": 100.0,
-    "mean_psp_amplitude_mv": 15.8,
-    "std_psp_amplitude_mv": 0.5,
-    "mean_latency_ms": 1.83,
-    "jitter_std_ms": 0.323,
+    "mean_psp_amplitude_mv": 15.76,
+    "std_psp_amplitude_mv": 0.43,
+    "mean_latency_ms": 1.827,
+    "jitter_std_ms": 0.324,
     "paired_pulse_ratio": 0.885
   },
   "experiment_2_biocompatibility_gaba": {
@@ -27,19 +27,19 @@
   },
   "experiment_3_motor_latency_and_saccades": {
     "total_trials": 300,
-    "overall_saccade_accuracy_percent": 93.33,
+    "overall_saccade_accuracy_percent": 94.0,
     "saccade_breakdown": {
-      "TURN_LEFT": 93.33,
+      "TURN_LEFT": 90.67,
       "TURN_RIGHT": 93.33,
-      "THRUST_SURGE": 94.67,
-      "BRAKE": 92.0
+      "THRUST_SURGE": 97.33,
+      "BRAKE": 94.67
     },
     "latencies_mean_ms": {
-      "werr_fractal_decision": 0.465,
-      "electrode_shank_rc": 0.12,
-      "eb_ring_compass_shift": 1.715,
-      "dn_motor_activation": 1.346,
-      "total_end_to_end": 3.645
+      "werr_fractal_decision": 0.462,
+      "electrode_shank_rc": 0.121,
+      "eb_ring_compass_shift": 1.705,
+      "dn_motor_activation": 1.343,
+      "total_end_to_end": 3.63
     },
     "epg_attractor_bump_coherence_R": 0.841
   },
@@ -108,10 +108,10 @@
   },
   "experiment_5_information_theory": {
     "source_entropy_H_X_bits": 1.857,
-    "response_entropy_H_Y_bits": 1.876,
+    "response_entropy_H_Y_bits": 1.892,
     "noise_entropy_H_Y_given_X_bits": 0.56,
-    "mutual_information_bits_per_symbol": 1.316,
-    "neural_coding_efficiency_percent": 70.85,
+    "mutual_information_bits_per_symbol": 1.332,
+    "neural_coding_efficiency_percent": 71.73,
     "channel_capacity_bits": 1.82,
     "signal_to_noise_ratio_db": 19.44
   },
@@ -155,5 +155,5 @@
     ],
     "critical_pin_threshold": 256
   },
-  "execution_duration_sec": 0.13
+  "execution_duration_sec": 0.07
 }

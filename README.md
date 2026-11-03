@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.22996625"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22996625.svg" alt="DOI: 10.5281/zenodo.22996625"></a>
+  <a href="https://pcworm.github.io/WerrSoma/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live%20Hub-10b981.svg?logo=github&logoColor=white" alt="GitHub Pages Live Hub"></a>
   <a href="https://werrsoma.answerr.me/"><img src="https://img.shields.io/badge/Live%20Portal-werrsoma.answerr.me-00f0ff" alt="Live Portal"></a>
   <a href="arxiv/"><img src="https://img.shields.io/badge/arXiv-Ready%20Package-b31b1b.svg" alt="arXiv Package"></a>
   <img src="https://img.shields.io/badge/Patent%20Priority-TR%202026%2F016633-blue" alt="TÜRKPATENT TR 2026/016633">
