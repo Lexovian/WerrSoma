@@ -151,11 +151,11 @@ Tested across 6 rigorous biophysical protocols via [`run_scientific_experiments.
 ```text
 Dağhan Dağlı 1,*, Volkan Dağlı 2,3,†, Dr. Zerrin Dağlı 4,5
 
-1 Toros Science High School, Mersin Education Foundation (Toros University), Türkiye
+1 Toros University, Türkiye
 2 Anadolu University, Türkiye
 3 ITouch Systems, Çukurova Üniversitesi Teknokent, Adana, Türkiye
 4 Mersin University, Türkiye
-5 Yusuf Kalkavan Anatolian High School, Türkiye
+5 Mersin University, Türkiye
 
 * Lead Author & Connectome Architecture Lead (ORCID: 0009-0003-2492-8313)
 † Corresponding Author: ask@answerr.me (ORCID: 0009-0000-1587-8703)
