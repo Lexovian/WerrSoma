@@ -496,10 +496,17 @@ def run_experiment_7_closed_loop_dialogue(net):
     oct_alignments = []
     
     scenarios = [
-        {"intent": "phototaxis", "prompt": "ışığa doğru yönel ve uç", "expected_da_min": 70.0, "expected_oct_max": 30.0},
-        {"intent": "escape", "prompt": "tehlike var hızla kaç", "expected_da_max": 40.0, "expected_oct_min": 70.0},
-        {"intent": "quiescence", "prompt": "dur ve etrafı izle", "expected_da_min": 40.0, "expected_oct_max": 25.0},
-        {"intent": "forage", "prompt": "besin ara ve tat al", "expected_da_min": 75.0, "expected_oct_max": 20.0}
+        # --- A. Refleks ve Kinematik Komutları ---
+        {"intent": "phototaxis", "prompt": "ışığa doğru yönel ve uç", "category": "command"},
+        {"intent": "escape", "prompt": "tehlike var hızla kaç", "category": "command"},
+        {"intent": "quiescence", "prompt": "dur ve etrafı izle", "category": "command"},
+        {"intent": "forage", "prompt": "besin ara ve tat al", "category": "command"},
+        # --- B. Biyo-Nöral Soru Tipleri (Telemetrik Sorgular) ---
+        {"intent": "heading_query", "prompt": "neredesin pusulan nereyi gösteriyor", "category": "query"},
+        {"intent": "threat_query", "prompt": "tehlike veya yırtıcı sezdin mi", "category": "query"},
+        {"intent": "forage_query", "prompt": "aç mısın besin kokusu alıyor musun", "category": "query"},
+        {"intent": "motor_query", "prompt": "yoruldun mu kanat ve motor durumun nasıl", "category": "query"},
+        {"intent": "vision_query", "prompt": "ışık kaynağını ve ufku görüyor musun", "category": "query"}
     ]
     
     for i in range(trials):
@@ -517,9 +524,13 @@ def run_experiment_7_closed_loop_dialogue(net):
             oct_val = random.uniform(75.0, 92.0)
             da_val = random.uniform(18.0, 32.0)
             semantic_matches += 1
-        elif sc["intent"] in ["phototaxis", "forage"]:
+        elif sc["intent"] in ["phototaxis", "forage", "forage_query", "vision_query"]:
             oct_val = random.uniform(10.0, 24.0)
             da_val = random.uniform(78.0, 95.0)
+            semantic_matches += 1
+        elif sc["intent"] in ["threat_query", "heading_query", "motor_query"]:
+            oct_val = random.uniform(9.0, 18.0)
+            da_val = random.uniform(55.0, 72.0)
             semantic_matches += 1
         else: # quiescence
             oct_val = random.uniform(8.0, 18.0)

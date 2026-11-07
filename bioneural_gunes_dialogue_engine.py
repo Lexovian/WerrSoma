@@ -239,7 +239,32 @@ TR_INTENT_MAP: Dict[str, Dict] = {
     "dön": {"kok": "dön", "ek": "wu", "koma": 26},
     "sola": {"kok": "dön", "ek": "ra", "koma": 17},
     "sağa": {"kok": "dön", "ek": "ra", "koma": 17},
-    "sap": {"kok": "dön", "ek": "wu", "koma": 26}
+    "sap": {"kok": "dön", "ek": "wu", "koma": 26},
+
+    # Biyo-Nöral Soru ve Telemetrik Sorgu İfadeleri
+    "neredesin": {"kok": "bak", "ek": "na", "koma": 50},
+    "nerede": {"kok": "dur", "ek": "na", "koma": 50},
+    "neresi": {"kok": "dur", "ek": "na", "koma": 50},
+    "pusula": {"kok": "dur", "ek": "re", "koma": 18},
+    "pusulan": {"kok": "dur", "ek": "re", "koma": 18},
+    "yönün": {"kok": "ak", "ek": "ro", "koma": 19},
+    "rota": {"kok": "ak", "ek": "ra", "koma": 17},
+    "tehdit": {"kok": "ürk", "ek": "te", "koma": 2},
+    "yırtıcı": {"kok": "ürk", "ek": "te", "koma": 2},
+    "sezdin": {"kok": "bak", "ek": "ti", "koma": 3},
+    "korktun": {"kok": "ürk", "ek": "ti", "koma": 3},
+    "aç": {"kok": "aş", "ek": "na", "koma": 50},
+    "koku": {"kok": "aş", "ek": "re", "koma": 18},
+    "enerji": {"kok": "ag", "ek": "re", "koma": 18},
+    "yoruldun": {"kok": "dur", "ek": "ti", "koma": 3},
+    "kanat": {"kok": "ak", "ek": "ro", "koma": 19},
+    "motor": {"kok": "ak", "ek": "la", "koma": 0},
+    "görüyor": {"kok": "gör", "ek": "re", "koma": 18},
+    "ufuk": {"kok": "bak", "ek": "re", "koma": 18},
+    "musun": {"kok": "bak", "ek": "na", "koma": 50},
+    "mısın": {"kok": "dur", "ek": "na", "koma": 50},
+    "mi": {"kok": "wer", "ek": "na", "koma": 50},
+    "mı": {"kok": "wer", "ek": "na", "koma": 50}
 }
 
 @dataclass
@@ -340,7 +365,7 @@ class BioNeuralDialogueEngine:
         gd_sentence = " ".join(matched_tokens)
         return gd_sentence, avg_koma, root_actions
 
-    def translate_gunes_to_turkish(self, gd_text: str, da: float, oct_: float, ser: float) -> str:
+    def translate_gunes_to_turkish(self, gd_text: str, da: float, oct_: float, ser: float, custom_cognitive: Optional[str] = None) -> str:
         """
         Sineğin connectome'undan dökülen Güneş Dili sentaksını ve nöromodülatörlerini
         doğal, akıcı Türkçeye çevirir.
@@ -362,7 +387,9 @@ class BioNeuralDialogueEngine:
         gloss_str = ", ".join(morpheme_gloss)
 
         # Biyolojik durum ve kinematik zeminlemesi
-        if oct_ > 65.0:
+        if custom_cognitive:
+            cognitive_state = custom_cognitive
+        elif oct_ > 65.0:
             cognitive_state = "Tehlike/kaçış alarmı devrede, yüksek hızla kaçış manevrasındayım."
         elif da > 70.0:
             cognitive_state = "Merak ve hedef algım yüksek, ışık odağına kilitlendim."
@@ -387,8 +414,88 @@ class BioNeuralDialogueEngine:
         spikes = random.randint(2450, 3650)
         jitter = round(random.uniform(0.08, 0.22), 3)
 
-        # Eylem ve Girdiye Göre Nöral Ağ Dinamiği
-        if any(a in ["ar", "ürk"] for a in root_actions) or any(k in turkish_input.lower() for k in ["kaç", "tehlike", "korku", "hızla"]):
+        lower_in = turkish_input.lower()
+        is_question = any(q in lower_in for q in ["?", "mı", "mi", "mu", "mü", "mısın", "misin", "musun", "müsün", "nerede", "neresi", "nasıl", "ne durumda", "sezdin", "görüyor"])
+        custom_cognitive = None
+
+        # =====================================================================
+        # A. SORU TİPLERİ VE NÖRO-TELEMETRİK SORGULAR (INTERROGATIVE QUERIES)
+        # =====================================================================
+        if is_question:
+            if any(k in lower_in for k in ["nerede", "neresi", "nereye", "pusula", "yönün", "rota", "açı", "hangi yöne"]):
+                # 1. Konum & Pusula Sorgusu
+                gd_input = "bak'na dur're" # Algı (Soru - Koma 50) + Durum (Belirtme)
+                gd_reply = "dur'ha ak're" # Durum (1. Tekil 'ben' - Koma 45) + Akış (Belirtme)
+                reply_koma = 45 # -ha (1. Tekil Şahıs, 792.5 Hz, Hüseyni)
+                substrate_desc = "Shank 1 (Ellipsoid Body E-PG Ring Attractor Compass)"
+                da_level = round(random.uniform(58.0, 68.0), 1)
+                oct_level = round(random.uniform(10.0, 16.0), 1)
+                ser_level = round(random.uniform(72.0, 84.0), 1)
+                wingbeat = round(random.uniform(205.0, 216.0), 1)
+                custom_cognitive = f"E-PG pusula halkam {self.current_heading_deg}° açısında kilitli (von Mises R = 0.86). Ufkumu koruyor ve kararlı rotamda seyrediyorum."
+
+            elif any(k in lower_in for k in ["tehlike", "tehdit", "yırtıcı", "korku", "düşman", "tuzak", "sezdin"]):
+                # 2. Tehdit / Yırtıcı Algı Sorgusu
+                gd_input = "ürk'na bak're" # Korku (Soru) + İzleme (Belirtme)
+                gd_reply = "ürk'de dur'la" # Korku (Olumsuzluk) + Durum (Denge)
+                reply_koma = 6 # -de (Olumsuzluk, 475.9 Hz, Çargâh)
+                substrate_desc = "Shank 2: Lobula Plate (LPLC2 Looming Detector) + Baseline"
+                da_level = round(random.uniform(50.0, 62.0), 1)
+                oct_level = round(random.uniform(9.0, 15.0), 1) # Alarm yok
+                ser_level = round(random.uniform(80.0, 92.0), 1)
+                wingbeat = round(random.uniform(205.0, 215.0), 1)
+                custom_cognitive = "Optik lobumda ani genişleyen tehdit silüeti yok. Kaçış devrelerim (LPLC2) sakin ve tetikte beklemede (OCT: %12), güvenli bölgedeyiz."
+
+            elif any(k in lower_in for k in ["aç", "besin", "koku", "şeker", "enerji", "tat"]):
+                # 3. Açlık & Besin & Koku Sorgusu
+                gd_input = "aş'na tat're" # Besin (Soru) + Tat (Belirtme)
+                gd_reply = "aş're tat'ku" # Besin (Belirtme) + Tat (Yönelim/Gelecek)
+                reply_koma = 12 # -ku (Gelecek/Hedef, 514.8 Hz, Dik Hicaz)
+                substrate_desc = "Shank 3-4 (Mushroom Body Kenyon Cells) + PAM Dopamine Cluster"
+                da_level = round(random.uniform(82.0, 94.0), 1) # Yüksek arama motivasyonu
+                oct_level = round(random.uniform(12.0, 19.0), 1)
+                ser_level = round(random.uniform(65.0, 78.0), 1)
+                wingbeat = round(random.uniform(204.0, 214.0), 1)
+                custom_cognitive = "Anten lobum ve Mantar Gövdesi Kenyon hücrelerim sukroz koku izi arıyor. Dopamin ödül motivasyonum yüksek (%86), besin arayışındayım."
+
+            elif any(k in lower_in for k in ["yorul", "kanat", "motor", "denge", "güç", "halsiz"]):
+                # 4. Yorgunluk & Motor & Biyolojik Denge Sorgusu
+                gd_input = "dur'na ak're" # Durma (Soru) + Akış (Belirtme)
+                gd_reply = "ak'ko dur'de" # Akış (Geniş Zaman) + Durma (Olumsuzluk)
+                reply_koma = 11 # -ko (Geniş Zaman, 508.1 Hz, Rast)
+                substrate_desc = "Descending Motor Neurons (DNp01) + GABA Homeostatic Clamp (-53.9 mV)"
+                da_level = round(random.uniform(65.0, 76.0), 1)
+                oct_level = round(random.uniform(16.0, 24.0), 1)
+                ser_level = round(random.uniform(85.0, 96.0), 1)
+                wingbeat = 212.0
+                custom_cognitive = "Descending motor nöronlarım 212 Hz kanat frekansında kararlı. GABA homeostatik frenlemem devrede (-53.9 mV), yorgunluk yok, uçuşa devam."
+
+            elif any(k in lower_in for k in ["gör", "ışık", "ufuk", "aydınlık"]):
+                # 5. Görsel Algı & Ufuk / Işık Sorgusu
+                gd_input = "ag'na gör're" # Işık (Soru) + Görme (Belirtme)
+                gd_reply = "ag'ra gör're" # Işık (Yönelme) + Görme (Belirtme)
+                reply_koma = 17 # -ra (Yönelme, 549.6 Hz, Çargâh)
+                substrate_desc = "Retina Ommatidia (R1-R6) + Optic Flow Medulla/Lobula Circuit"
+                da_level = round(random.uniform(84.0, 95.0), 1)
+                oct_level = round(random.uniform(10.0, 18.0), 1)
+                ser_level = round(random.uniform(70.0, 82.0), 1)
+                wingbeat = round(random.uniform(210.0, 220.0), 1)
+                custom_cognitive = "Bileşik gözlerim fototaksi fotonlarını yakaladı. 594 nm spektrumunda ışık kutbunu ve ufkumu net görüyorum."
+
+            else:
+                # Genel Soru Rezonansı
+                gd_input = "ag'na bak're"
+                gd_reply = "ag'ra dur'la"
+                reply_koma = 17
+                substrate_desc = "Diffuse Central Complex Neuromorphic Resonance"
+                da_level = 62.0; oct_level = 18.0; ser_level = 76.0
+                wingbeat = 210.0
+                custom_cognitive = "Nöral telemetri kanallarım açık, 158 bin nöronluk rezonans dengede seyrediyor."
+
+        # =====================================================================
+        # B. REFLEKS VE KİNEMATİK KOMUTLARI (DIRECTIVE COMMANDS)
+        # =====================================================================
+        elif any(a in ["ar", "ürk"] for a in root_actions) or any(k in lower_in for k in ["kaç", "tehlike", "korku", "hızla"]):
             # Kaçış Refleksi (Oktapamin Deşarjı, Saccade +180°, Maksimum Kanat Frekansı)
             oct_level = round(random.uniform(75.0, 93.0), 1)
             da_level = round(random.uniform(15.0, 32.0), 1)
@@ -467,7 +574,7 @@ class BioNeuralDialogueEngine:
         out_spectral = self.compute_spectral_properties(reply_koma)
 
         # Sineğin cevabını doğal Türkçeye çevir
-        turkce_tercume = self.translate_gunes_to_turkish(gd_reply, da_level, oct_level, ser_level)
+        turkce_tercume = self.translate_gunes_to_turkish(gd_reply, da_level, oct_level, ser_level, custom_cognitive)
 
         response = FlyNeuralResponse(
             raw_spikes=spikes,
@@ -490,11 +597,19 @@ class BioNeuralDialogueEngine:
 if __name__ == "__main__":
     engine = BioNeuralDialogueEngine()
     test_prompts = [
+        # --- A. REFLEKS KOMUTLARI ---
         "Işığa doğru yönel ve uç",
         "Tehlike var, hızla kaç",
         "Olduğun yerde dur ve etrafı izle",
         "Besin ara ve tat al",
-        "Sola doğru açılı dön"
+        "Sola doğru açılı dön",
+
+        # --- B. BİYO-NÖRAL SORU TİPLERİ (TELEMETRİK SORGULAR) ---
+        "Neredesin, pusulan nereyi gösteriyor?",
+        "Tehlike veya yırtıcı sezdin mi?",
+        "Aç mısın, besin kokusu alıyor musun?",
+        "Yoruldun mu, kanat ve motor durumun nasıl?",
+        "Işık kaynağını ve ufku görüyor musun?"
     ]
     
     print("=" * 85)

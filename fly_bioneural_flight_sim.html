@@ -431,6 +431,34 @@
       flex-direction: column;
       gap: 8px;
     }
+    .preset-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .preset-tabs {
+      display: flex;
+      gap: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 4px;
+    }
+    .ptab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      color: #94a3b8;
+      font-size: 0.63rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .ptab-btn.active {
+      background: rgba(0, 240, 255, 0.18);
+      border-color: #00f0ff;
+      color: #00f0ff;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+    }
     .preset-chips {
       display: flex;
       flex-wrap: wrap;
@@ -453,6 +481,28 @@
       border-color: #00f0ff;
       color: #00f0ff;
       transform: translateY(-1px);
+    }
+    .chip-query {
+      border-color: rgba(168, 85, 247, 0.38);
+      color: #d8b4fe;
+      background: rgba(168, 85, 247, 0.08);
+    }
+    .chip-query:hover {
+      background: rgba(168, 85, 247, 0.28);
+      border-color: #c084fc;
+      color: #f5f3ff;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+    }
+    .chip-cmd {
+      border-color: rgba(0, 240, 255, 0.3);
+      color: #38bdf8;
+      background: rgba(0, 240, 255, 0.06);
+    }
+    .chip-cmd:hover {
+      background: rgba(0, 240, 255, 0.22);
+      border-color: #00f0ff;
+      color: #e0f2fe;
+      box-shadow: 0 0 8px rgba(0, 240, 255, 0.35);
     }
     .dialogue-input-group {
       display: flex;
@@ -692,15 +742,33 @@
       <span class="dialogue-badge">53-Hölder Koma Rezonansı</span>
     </div>
     <div class="dialogue-body">
-      <div class="preset-chips">
-        <button class="chip-btn" onclick="applyPresetPrompt('Işığa doğru yönel ve uç')">💡 Işığa Yönel</button>
-        <button class="chip-btn" onclick="applyPresetPrompt('Tehlike var hızla kaç')">🚨 Tehdit / Kaçış</button>
-        <button class="chip-btn" onclick="applyPresetPrompt('Olduğun yerde dur ve etrafı izle')">🛑 Dur & İzle</button>
-        <button class="chip-btn" onclick="applyPresetPrompt('Besin ara ve tat al')">🍯 Besin / Ödül</button>
-        <button class="chip-btn" onclick="applyPresetPrompt('Sola doğru açılı dön')">🔄 Sola Dön</button>
+      <div class="preset-section">
+        <div class="preset-tabs">
+          <button class="ptab-btn active" id="tab-btn-questions" onclick="switchPresetTab('questions')">❓ Biyo-Nöral Soru Tipleri (5)</button>
+          <button class="ptab-btn" id="tab-btn-commands" onclick="switchPresetTab('commands')">⚡ Refleks Komutları (5)</button>
+        </div>
+
+        <!-- 1. Biyo-Nöral Soru Tipleri (Telemetrik Sorgular) -->
+        <div class="preset-chips" id="preset-questions-group">
+          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Neredesin, pusulan nereyi gösteriyor?')">🧭 Pusula / Yönün neresi?</button>
+          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Tehlike veya yırtıcı sezdin mi?')">👁️ Tehdit sezdin mi?</button>
+          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Aç mısın, besin kokusu alıyor musun?')">🍯 Aç mısın, besin var mı?</button>
+          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Yoruldun mu, kanat ve motor durumun nasıl?')">🪽 Yoruldun mu, motor?</button>
+          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Işık kaynağını ve ufku görüyor musun?')">☀️ Işığı görüyor musun?</button>
+        </div>
+
+        <!-- 2. Refleks ve Kinematik Komutları -->
+        <div class="preset-chips" id="preset-commands-group" style="display:none;">
+          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Işığa doğru yönel ve uç')">💡 Işığa Yönel</button>
+          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Tehlike var hızla kaç')">🚨 Tehdit / Kaçış</button>
+          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Olduğun yerde dur ve etrafı izle')">🛑 Dur & İzle</button>
+          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Besin ara ve tat al')">🍯 Besin / Ödül</button>
+          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Sola doğru açılı dön')">🔄 Sola Dön</button>
+        </div>
       </div>
+
       <div class="dialogue-input-group">
-        <input type="text" id="dialogue-input" class="dialogue-input" placeholder="Türkçe mesaj yazın... (örn: ışığa doğru uç)" onkeydown="if(event.key==='Enter') executeDialogue();">
+        <input type="text" id="dialogue-input" class="dialogue-input" placeholder="Soru sorun veya komut yazın... (örn: Neredesin? ya da Işığa uç)" onkeydown="if(event.key==='Enter') executeDialogue();">
         <button class="btn-send" onclick="executeDialogue()">⚡ Uyar & Dinle</button>
       </div>
 
@@ -1715,6 +1783,24 @@
       }
     }
 
+    window.switchPresetTab = function(tabName) {
+      const qGroup = document.getElementById('preset-questions-group');
+      const cGroup = document.getElementById('preset-commands-group');
+      const btnQ = document.getElementById('tab-btn-questions');
+      const btnC = document.getElementById('tab-btn-commands');
+      if (tabName === 'questions') {
+        if (qGroup) qGroup.style.display = 'flex';
+        if (cGroup) cGroup.style.display = 'none';
+        if (btnQ) btnQ.classList.add('active');
+        if (btnC) btnC.classList.remove('active');
+      } else {
+        if (qGroup) qGroup.style.display = 'none';
+        if (cGroup) cGroup.style.display = 'flex';
+        if (btnC) btnC.classList.add('active');
+        if (btnQ) btnQ.classList.remove('active');
+      }
+    };
+
     window.applyPresetPrompt = function(text) {
       const inp = document.getElementById('dialogue-input');
       if (inp) {
@@ -1738,7 +1824,77 @@
       let spikes = Math.round(2500 + Math.random() * 850);
       let jitter = (0.09 + Math.random() * 0.08).toFixed(3);
 
-      if (lower.includes("ışık") || lower.includes("güneş") || lower.includes("uç") || lower.includes("yönel") || lower.includes("aydınlık")) {
+      const isQuestion = lower.includes("?") || lower.includes("mı") || lower.includes("mi") || lower.includes("mu") || lower.includes("mü") || lower.includes("mısın") || lower.includes("misin") || lower.includes("musun") || lower.includes("nerede") || lower.includes("neresi") || lower.includes("nasıl") || lower.includes("sezdin") || lower.includes("görüyor");
+
+      // =====================================================================
+      // A. BİYO-NÖRAL SORU TİPLERİ VE CEVAPLARI (TELEMETRİK SORGULAMA)
+      // =====================================================================
+      if (isQuestion) {
+        if (lower.includes("nerede") || lower.includes("neresi") || lower.includes("pusula") || lower.includes("yönün") || lower.includes("rota") || lower.includes("açı")) {
+          // 1. Konum & Pusula Sorgusu
+          gdInput = "bak'na dur're";
+          gdReply = "dur'ha ak're";
+          replyKoma = 45; // -ha (1. Tekil 'ben', 792.5 Hz, Hüseyni)
+          da = (62.0 + Math.random() * 8.0).toFixed(1);
+          oct = (12.0 + Math.random() * 5.0).toFixed(1);
+          ser = (78.0 + Math.random() * 8.0).toFixed(1);
+          substrate = "Shank 1: Central Complex EB Ring Attractor Compass";
+          const headingDeg = (Math.round((epgRingAngle * 180 / Math.PI) % 360 + 360) % 360).toFixed(1);
+          trReply = "Durma / sabitlenme (şahıs 1. tekil (-im/-ım)), akış / uçuş (belirtme hali). «E-PG pusula halkam " + headingDeg + "° açısında kilitli (von Mises R = 0.86). Ufkumu koruyor ve kararlı rotamda seyrediyorum.»";
+        } else if (lower.includes("tehlike") || lower.includes("tehdit") || lower.includes("yırtıcı") || lower.includes("korku") || lower.includes("düşman") || lower.includes("sezdin")) {
+          // 2. Tehdit / Yırtıcı Algı Sorgusu
+          gdInput = "ürk'na bak're";
+          gdReply = "ürk'de dur'la";
+          replyKoma = 6; // -de (Olumsuzluk "-me/-ma", 475.9 Hz, Çargâh)
+          da = (54.0 + Math.random() * 8.0).toFixed(1);
+          oct = (11.0 + Math.random() * 5.0).toFixed(1); // Alarm yok!
+          ser = (85.0 + Math.random() * 8.0).toFixed(1);
+          substrate = "Shank 2: Lobula Plate (LPLC2 Looming Detector) + Baseline";
+          trReply = "Korku / tehdit alarmı (olumsuzluk bildirimi (-me/-ma)), durma / sabitlenme (durum hali). «Optik lobumda ani genişleyen tehdit silüeti yok. Kaçış devrelerim (LPLC2) sakin ve tetikte beklemede (OCT: %11), güvenli bölgedeyiz.»";
+        } else if (lower.includes("aç") || lower.includes("besin") || lower.includes("koku") || lower.includes("şeker") || lower.includes("enerji") || lower.includes("tat")) {
+          // 3. Açlık & Besin & Koku Sorgusu
+          gdInput = "aş'na tat're";
+          gdReply = "aş're tat'ku";
+          replyKoma = 12; // -ku (Gelecek/Hedef, 514.8 Hz, Dik Hicaz)
+          da = (86.0 + Math.random() * 8.0).toFixed(1);
+          oct = (15.0 + Math.random() * 5.0).toFixed(1);
+          ser = (70.0 + Math.random() * 8.0).toFixed(1);
+          substrate = "Shank 3-4 (Mushroom Body Kenyon Cells) + PAM Dopamine Cluster";
+          trReply = "Besin / gıda (belirtme hali), tat alma / ödül (gelecek / yönelim kipi). «Anten lobum ve Mantar Gövdesi Kenyon hücrelerim sukroz koku izi arıyor. Dopamin ödül motivasyonum yüksek (%86), besin arayışındayım.»";
+        } else if (lower.includes("yorul") || lower.includes("kanat") || lower.includes("motor") || lower.includes("denge") || lower.includes("güç") || lower.includes("halsiz")) {
+          // 4. Yorgunluk & Motor & Biyolojik Denge Sorgusu
+          gdInput = "dur'na ak're";
+          gdReply = "ak'ko dur'de";
+          replyKoma = 11; // -ko (Geniş Zaman, 508.1 Hz, Rast)
+          da = (70.0 + Math.random() * 8.0).toFixed(1);
+          oct = (20.0 + Math.random() * 6.0).toFixed(1);
+          ser = (88.0 + Math.random() * 8.0).toFixed(1);
+          substrate = "Descending Motor Neurons (DNp01) + GABA Homeostatic Clamp (-53.9 mV)";
+          trReply = "Akış / uçuş / hareket (geniş zaman kipi (-r/-ar)), durma / sabitlenme (olumsuzluk bildirimi (-me/-ma)). «Descending motor nöronlarım 212 Hz kanat frekansında kararlı. GABA homeostatik frenlemem devrede (-53.9 mV), yorgunluk yok, uçuşa devam.»";
+        } else if (lower.includes("gör") || lower.includes("ışık") || lower.includes("ufuk") || lower.includes("aydınlık")) {
+          // 5. Görsel Algı & Ufuk / Işık Sorgusu
+          gdInput = "ag'na gör're";
+          gdReply = "ag'ra gör're";
+          replyKoma = 17; // -ra (Yönelme, 549.6 Hz, Çargâh)
+          da = (88.0 + Math.random() * 7.0).toFixed(1);
+          oct = (13.0 + Math.random() * 6.0).toFixed(1);
+          ser = (75.0 + Math.random() * 8.0).toFixed(1);
+          substrate = "Retina Ommatidia (R1-R6) + Optic Flow Medulla/Lobula Circuit";
+          trReply = "Işık / güneş (yönelme hali), görme / algılama (belirtme hali). «Bileşik gözlerim fototaksi fotonlarını yakaladı. 594 nm spektrumunda ışık kutbunu ve ufkumu net görüyorum.»";
+        } else {
+          // Genel Soru Rezonansı
+          gdInput = "ag'na bak're";
+          gdReply = "ag'ra dur'la";
+          replyKoma = 17;
+          da = 62.0; oct = 18.0; ser = 76.0;
+          substrate = "Diffuse Central Complex Neuromorphic Resonance";
+          trReply = "Işık / güneş (yönelme hali), durma / denge (durum hali). «Nöral telemetri kanallarım açık, 158 bin nöronluk rezonans dengede seyrediyor.»";
+        }
+      }
+      // =====================================================================
+      // B. REFLEKS VE KİNEMATİK MOTOR KOMUTLARI
+      // =====================================================================
+      else if (lower.includes("ışık") || lower.includes("güneş") || lower.includes("uç") || lower.includes("yönel") || lower.includes("aydınlık")) {
         // Kanonik Fototaksis: ag'ra ak'ku gör're (Işığa yönelim, uçuş ve görme)
         gdInput = "ag'ra ak'ku";
         gdReply = "ag'ra ak'ku gör're";
