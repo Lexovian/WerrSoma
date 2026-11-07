@@ -116,22 +116,24 @@ graph LR
 
 ## 📊 Empirical Scientific Findings
 
-Tested across 6 rigorous biophysical protocols via [`run_scientific_experiments.py`](run_scientific_experiments.py) on the real 158k FlyWire graph (full report: [`scientific_benchmark_results.json`](scientific_benchmark_results.json)):
+Tested across 8 rigorous biophysical and phono-semantic protocols via [`run_scientific_experiments.py`](run_scientific_experiments.py) on the real 158k FlyWire graph (full report: [`scientific_benchmark_results.json`](scientific_benchmark_results.json)):
 
 | Metric / Experiment | Target Benchmark | Empirical Result | Status |
 | :--- | :---: | :---: | :---: |
 | **Synaptic Transmission Fidelity** | $> 95.0\%$ | **$100.0\%$** ($300/300$ trials) | **OPTIMAL** |
-| **Mean Postsynaptic Potential ($\Delta V_m$)** | $12 - 18\text{ mV}$ | **$15.83 \pm 0.51\text{ mV}$** | **PASSED** |
-| **End-to-End Reflex Latency** | $< 5.0\text{ ms}$ | **$3.671\text{ ms}$** (Decision: $0.46\text{ ms}$) | **SUB-REFLEX** |
-| **Saccadic Steering Accuracy** | $> 85.0\%$ | **$94.67\%$** (L: 93.3%, R: 96.0%, F: 94.7%, S: 94.7%) | **PASSED** |
+| **Mean Postsynaptic Potential ($\Delta V_m$)** | $12 - 18\text{ mV}$ | **$15.77 \pm 0.46\text{ mV}$** | **PASSED** |
+| **End-to-End Reflex Latency** | $< 5.0\text{ ms}$ | **$3.638\text{ ms}$** (Decision: $0.46\text{ ms}$) | **SUB-REFLEX** |
+| **Saccadic Steering Accuracy** | $> 85.0\%$ | **$91.00\%$** (L: 92.0%, R: 89.3%, F: 89.3%, S: 93.3%) | **PASSED** |
 | **Attractor Heading Coherence (Rayleigh $R$)** | $> 0.80$ | **$0.841$** (Sharply tuned von Mises bump) | **PASSED** |
 | **GABA Homeostatic Counter-Current** | $30 - 50\%$ | **$38.58\%$** (Clamps $V_m$ at $-53.93\text{ mV}$) | **NO SEIZURE / PDS** |
 | **Network Stability Index (NSI)** | $> 0.90$ | **$0.965 / 1.000$** | **PASSED** |
 | **Baseline Metabolic Power (1,024 pins)** | $< 5.0\ \mu\text{W}$ | **$1.23\ \mu\text{W}$** ($21.89\ \mu\text{W}$ at 200 Hz) | **PASSED** |
 | **Tissue Thermal Elevation ($\Delta T$)** | $< 0.05^\circ\text{C}$ | **$+0.0012^\circ\text{C}$** | **SAFE** |
 | **Safe Continuous Stimulation Limit ($f_{\text{max}}$)** | $> 200\text{ Hz}$ | **$265\text{ Hz}$** ($20\text{ ms}$ refractory clamp) | **NO BURNOUT** |
-| **Neural Coding Efficiency ($\eta$)** | $> 60.0\%$ | **$70.10\%$** ($I(X; Y) = 1.302\text{ bits}$, $19.44\text{ dB}$) | **PASSED** |
+| **Neural Coding Efficiency ($\eta$)** | $> 60.0\%$ | **$70.62\%$** ($I(X; Y) = 1.311\text{ bits}$, $19.44\text{ dB}$) | **PASSED** |
 | **Fault Tolerance (25% Pin Loss)** | $> 75.0\%$ | **$83.29\%$** Clean / **$78.46\%$** with 15Hz noise | **ROBUST** |
+| **Closed-Loop Dialogue Roundtrip Latency** | $< 5.0\text{ ms}$ | **$3.356\text{ ms}$** ($500/500$ congruent trials) | **PASSED (SUB-REFLEX)** |
+| **Bilingual Translation & Grounding Fidelity** | $> 95.0\%$ | **$100.0\%$** TR $\to$ GD / **$99.4\%$** GD $\to$ TR ($r=0.924$) | **GROUNDED** |
 
 ---
 
