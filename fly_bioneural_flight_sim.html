@@ -368,6 +368,11 @@
     .stream-tag.green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
   
     /* Bio-Neural Turkish-Güneş Dialogue Terminal */
+        /* When embedded inside iframe on portal page, hide floating dialogue terminal (portal has its own dedicated external console below canvas) */
+    .is-embedded #dialogue-terminal {
+      display: none !important;
+    }
+
     /* Bio-Neural Turkish-Güneş Dialogue Terminal (Bottom Cockpit Console) */
     .dialogue-terminal {
       position: absolute;
@@ -1875,10 +1880,9 @@ window.switchPresetTab = function(tabName) {
       }
     };
 
-    window.executeDialogue = function() {
-      const inp = document.getElementById('dialogue-input');
-      if (!inp || !inp.value.trim()) return;
-      const trText = inp.value.trim();
+    window.processBioneuralDialogue = function(rawText) {
+      if (!rawText || !rawText.trim()) return null;
+      const trText = rawText.trim();
       const lower = trText.toLowerCase();
 
       let gdInput = "";
@@ -2100,7 +2104,49 @@ window.switchPresetTab = function(tabName) {
       if (intercom) {
         intercom.innerHTML = `<span style="color:${spec.hex}; font-weight:bold;">[GD Koma ${spec.koma}]</span> Sinek ➔ WERR: «${gdReply}» [${spec.nm} nm • ${spec.akustikHz} Hz]`;
       }
+
+      return {
+        trInput: trText,
+        gdInput: gdInput,
+        gdReply: gdReply,
+        trReply: trReply,
+        replyKoma: replyKoma,
+        spec: spec,
+        da: da,
+        oct: oct,
+        ser: ser,
+        spikes: spikes,
+        jitter: jitter,
+        substrate: substrate
+      };
     };
+
+    window.executeDialogue = function() {
+      const inp = document.getElementById('dialogue-input');
+      if (!inp || !inp.value.trim()) return;
+      window.processBioneuralDialogue(inp.value);
+    };
+
+    // Detect iframe embedded mode
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+      document.body.classList.add('is-embedded');
+    }
+
+    // Bidirectional postMessage bridge with parent portal window
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'WERR_DIALOGUE_EXECUTE') {
+        const res = window.processBioneuralDialogue(event.data.prompt);
+        try {
+          if (window.parent) {
+            window.parent.postMessage({
+              type: 'WERR_DIALOGUE_RESPONSE',
+              payload: res
+            }, '*');
+          }
+        } catch(e) {}
+      }
+    });
 
     function triggerSpectralBrainFlash(hexColor) {
       const r = parseInt(hexColor.slice(1,3), 16) / 255.0;
