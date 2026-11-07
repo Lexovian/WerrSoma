@@ -18,13 +18,18 @@
       box-sizing: border-box;
       user-select: none;
     }
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
       background: #02050c;
       color: #e2e8f0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       overflow: hidden;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
+      position: fixed;
     }
     #canvas-container {
       position: absolute;
@@ -95,20 +100,20 @@
     /* Left Telemetry Panel */
     .panel-left {
       position: absolute;
-      top: 80px;
-      left: 18px;
-      width: 320px;
-      background: rgba(10, 16, 28, 0.90);
+      top: 60px;
+      left: 14px;
+      width: 280px;
+      bottom: 12px;
+      background: rgba(10, 16, 28, 0.92);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      padding: 16px;
+      padding: 12px;
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
-      max-height: calc(100vh - 100px);
       overflow-y: auto;
     }
     .panel-title {
@@ -214,14 +219,14 @@
     /* Top-Right Living Brain Monitor */
     .pip-brain-container {
       position: absolute;
-      top: 80px;
-      right: 18px;
-      width: 440px;
-      height: 380px;
+      top: 60px;
+      right: 14px;
+      width: 360px;
+      height: 210px;
       background: rgba(8, 12, 22, 0.94);
       backdrop-filter: blur(18px);
       border: 1px solid rgba(0, 240, 255, 0.45);
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 240, 255, 0.22);
       z-index: 10;
       overflow: hidden;
@@ -230,23 +235,23 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .pip-brain-container.fullscreen-brain {
-      width: calc(100vw - 36px);
-      height: calc(100vh - 160px);
-      top: 80px;
-      right: 18px;
-      z-index: 15;
+      width: calc(100vw - 28px);
+      height: calc(100vh - 80px);
+      top: 60px;
+      right: 14px;
+      z-index: 30;
     }
     .pip-header {
-      padding: 8px 14px;
+      padding: 6px 12px;
       background: rgba(0, 0, 0, 0.7);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #00f0ff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .pip-actions {
       display: flex;
@@ -257,8 +262,8 @@
       background: rgba(16, 185, 129, 0.15);
       border: 1px solid #10b981;
       color: #34d399;
-      font-size: 0.62rem;
-      padding: 2px 6px;
+      font-size: 0.60rem;
+      padding: 2px 5px;
       border-radius: 4px;
       font-family: monospace;
     }
@@ -273,9 +278,10 @@
       color: #38bdf8;
       font-size: 0.68rem;
       font-weight: 700;
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
     .pip-swap-btn:hover {
       background: rgba(0, 240, 255, 0.35);
@@ -283,7 +289,7 @@
     }
     #pip-canvas-container {
       width: 100%;
-      flex: 1;
+      height: 110px;
       position: relative;
     }
 
@@ -342,24 +348,9 @@
       display: block;
     }
 
-    /* Bottom Neural Event Stream */
+    /* Bottom Neural Event Stream (Integrated into dialogue-terminal header) */
     .bottom-stream {
-      position: absolute;
-      bottom: 14px;
-      left: 18px;
-      right: 18px;
-      height: 52px;
-      background: rgba(10, 16, 28, 0.90);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 8px 18px;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: monospace;
-      font-size: 0.74rem;
+      display: none !important;
     }
     .stream-log {
       color: #94a3b8;
@@ -377,44 +368,49 @@
     .stream-tag.green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
   
     /* Bio-Neural Turkish-Güneş Dialogue Terminal */
+    /* Bio-Neural Turkish-Güneş Dialogue Terminal (Bottom Cockpit Console) */
     .dialogue-terminal {
       position: absolute;
-      top: 470px;
-      right: 18px;
-      width: 440px;
-      height: calc(100vh - 544px);
-      min-height: 250px;
-      max-height: 480px;
-      background: rgba(8, 12, 22, 0.94);
+      bottom: 12px;
+      left: 304px;
+      right: 14px;
+      height: 240px;
+      background: rgba(8, 12, 22, 0.95);
       backdrop-filter: blur(18px);
       border: 1px solid rgba(0, 240, 255, 0.45);
-      border-radius: 14px;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 240, 255, 0.15);
-      z-index: 10;
+      border-radius: 12px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 240, 255, 0.18);
+      z-index: 20;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dialogue-terminal.minimized {
+      height: 38px;
     }
     .dialogue-header {
-      padding: 8px 14px;
-      background: rgba(0, 0, 0, 0.7);
+      padding: 6px 12px;
+      background: rgba(0, 0, 0, 0.75);
       border-bottom: 1px solid rgba(0, 240, 255, 0.25);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      min-height: 38px;
     }
     .dialogue-title {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 700;
       color: #00f0ff;
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
     .dialogue-badge {
-      font-size: 0.62rem;
+      font-size: 0.60rem;
       background: rgba(16, 185, 129, 0.15);
       color: #34d399;
       border: 1px solid #10b981;
@@ -422,14 +418,67 @@
       padding: 2px 6px;
       font-family: monospace;
       font-weight: 600;
+      white-space: nowrap;
+    }
+    .dialogue-stream-inline {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: monospace;
+      font-size: 0.70rem;
+      color: #94a3b8;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 0 10px;
+    }
+    .stream-text-inline {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .dialogue-body {
       flex: 1;
-      padding: 10px 12px;
+      padding: 8px 12px;
       overflow-y: auto;
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .dialogue-left-col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+    }
+    .dialogue-right-col {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .placeholder-card {
+      border: 1px dashed rgba(0, 240, 255, 0.25);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    @media (max-height: 720px) {
+      .pip-brain-container { height: 180px; }
+      #pip-canvas-container { height: 85px; }
+      .dialogue-terminal { height: 215px; }
+    }
+    @media (max-width: 1024px) {
+      .dialogue-terminal { left: 14px; }
+      .dialogue-body { grid-template-columns: 1fr; }
     }
     .preset-section {
       display: flex;
@@ -730,67 +779,72 @@
   </div>
 
 
-  <!-- Bio-Neural Güneş Dili & Türkçe İletişim Konsolu -->
+  <!-- Bio-Neural Güneş Dili & Türkçe İletişim Konsolu (Alt Kokpit Terminali) -->
   <div class="dialogue-terminal" id="dialogue-terminal">
     <div class="dialogue-header">
       <div class="dialogue-title">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
-        Biyo-Nöral Konuşma Terminali (Türkçe ⇄ Güneş Dili)
+        <span>Biyo-Nöral Konuşma Terminali (Türkçe ⇄ Güneş Dili)</span>
+        <span class="dialogue-badge">53-Hölder Z₅₃</span>
       </div>
-      <span class="dialogue-badge">53-Hölder Koma Rezonansı</span>
+
+      <!-- Live Stream Log in Terminal Header -->
+      <div class="dialogue-stream-inline">
+        <span class="stream-tag green" id="log-tag">BİYO-OTONOM</span>
+        <span id="log-text" class="stream-text-inline">Central Complex (EB E-PG nöronları) doğal yönelim aktivasyon dalgası üretiyor...</span>
+      </div>
+
+      <div class="pip-actions">
+        <button class="pip-swap-btn" id="btn-toggle-terminal" onclick="toggleTerminalMinimize()">➖ Küçült</button>
+      </div>
     </div>
-    <div class="dialogue-body">
-      <div class="preset-section">
-        <div class="preset-tabs">
-          <button class="ptab-btn active" id="tab-btn-questions" onclick="switchPresetTab('questions')">❓ Biyo-Nöral Soru Tipleri (5)</button>
-          <button class="ptab-btn" id="tab-btn-commands" onclick="switchPresetTab('commands')">⚡ Refleks Komutları (5)</button>
+
+    <div class="dialogue-body" id="dialogue-body-content">
+      <!-- Sol Kolon: Soru Tipleri / Komutlar ve Giriş Çubuğu -->
+      <div class="dialogue-left-col">
+        <div class="preset-section">
+          <div class="preset-tabs">
+            <button class="ptab-btn active" id="tab-btn-questions" onclick="switchPresetTab('questions')">❓ Biyo-Nöral Soru Tipleri (5)</button>
+            <button class="ptab-btn" id="tab-btn-commands" onclick="switchPresetTab('commands')">⚡ Refleks Komutları (5)</button>
+          </div>
+
+          <!-- 1. Biyo-Nöral Soru Tipleri (Telemetrik Sorgular) -->
+          <div class="preset-chips" id="preset-questions-group">
+            <button class="chip-btn chip-query" onclick="applyPresetPrompt('Neredesin, pusulan nereyi gösteriyor?')">🧭 Pusula / Yönün neresi?</button>
+            <button class="chip-btn chip-query" onclick="applyPresetPrompt('Tehlike veya yırtıcı sezdin mi?')">👁️ Tehdit sezdin mi?</button>
+            <button class="chip-btn chip-query" onclick="applyPresetPrompt('Aç mısın, besin kokusu alıyor musun?')">🍯 Aç mısın, besin var mı?</button>
+            <button class="chip-btn chip-query" onclick="applyPresetPrompt('Yoruldun mu, kanat ve motor durumun nasıl?')">🪽 Yoruldun mu, motor?</button>
+            <button class="chip-btn chip-query" onclick="applyPresetPrompt('Işık kaynağını ve ufku görüyor musun?')">☀️ Işığı görüyor musun?</button>
+          </div>
+
+          <!-- 2. Refleks ve Kinematik Komutları -->
+          <div class="preset-chips" id="preset-commands-group" style="display:none;">
+            <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Işığa doğru yönel ve uç')">💡 Işığa Yönel</button>
+            <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Tehlike var hızla kaç')">🚨 Tehdit / Kaçış</button>
+            <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Olduğun yerde dur ve etrafı izle')">🛑 Dur & İzle</button>
+            <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Besin ara ve tat al')">🍯 Besin / Ödül</button>
+            <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Sola doğru açılı dön')">🔄 Sola Dön</button>
+          </div>
         </div>
 
-        <!-- 1. Biyo-Nöral Soru Tipleri (Telemetrik Sorgular) -->
-        <div class="preset-chips" id="preset-questions-group">
-          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Neredesin, pusulan nereyi gösteriyor?')">🧭 Pusula / Yönün neresi?</button>
-          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Tehlike veya yırtıcı sezdin mi?')">👁️ Tehdit sezdin mi?</button>
-          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Aç mısın, besin kokusu alıyor musun?')">🍯 Aç mısın, besin var mı?</button>
-          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Yoruldun mu, kanat ve motor durumun nasıl?')">🪽 Yoruldun mu, motor?</button>
-          <button class="chip-btn chip-query" onclick="applyPresetPrompt('Işık kaynağını ve ufku görüyor musun?')">☀️ Işığı görüyor musun?</button>
-        </div>
-
-        <!-- 2. Refleks ve Kinematik Komutları -->
-        <div class="preset-chips" id="preset-commands-group" style="display:none;">
-          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Işığa doğru yönel ve uç')">💡 Işığa Yönel</button>
-          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Tehlike var hızla kaç')">🚨 Tehdit / Kaçış</button>
-          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Olduğun yerde dur ve etrafı izle')">🛑 Dur & İzle</button>
-          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Besin ara ve tat al')">🍯 Besin / Ödül</button>
-          <button class="chip-btn chip-cmd" onclick="applyPresetPrompt('Sola doğru açılı dön')">🔄 Sola Dön</button>
+        <div class="dialogue-input-group">
+          <input type="text" id="dialogue-input" class="dialogue-input" placeholder="Soru sorun veya komut yazın... (örn: Neredesin? ya da Işığa uç)" onkeydown="if(event.key==='Enter') executeDialogue();">
+          <button class="btn-send" onclick="executeDialogue()">⚡ Uyar & Dinle</button>
         </div>
       </div>
 
-      <div class="dialogue-input-group">
-        <input type="text" id="dialogue-input" class="dialogue-input" placeholder="Soru sorun veya komut yazın... (örn: Neredesin? ya da Işığa uç)" onkeydown="if(event.key==='Enter') executeDialogue();">
-        <button class="btn-send" onclick="executeDialogue()">⚡ Uyar & Dinle</button>
-      </div>
-
-      <!-- Canlı Cevap Kartı Konteyneri -->
-      <div id="dialogue-response-area">
-        <div class="response-card" style="border-style:dashed; opacity:0.75;">
-          <div style="font-size:0.68rem; color:#94a3b8; text-align:center;">
-            Sineğe Türkçe bir komut veya mesaj gönderin. Sistem Güneş Dili rezonansına çevirecek, 158K beyin implantına aktaracak ve sineğin verdiği yanıtı tüm koma/ışıma değerleriyle Türkçeye çevirecektir.
+      <!-- Sağ Kolon: Canlı Cevap Kartı ve Nöro-Telemetri Zeminlemesi -->
+      <div class="dialogue-right-col" id="dialogue-response-area">
+        <div class="placeholder-card">
+          <div>
+            <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">💡 Sinek Beyni ile Canlı Diyalog</div>
+            Sineğe sol taraftaki butonlarla soru yöneltin veya Türkçe komut yazın.<br>
+            Sistem Güneş Dili ($Z_{53}$) rezonansına çevirecek, 158K beyin implantına aktaracak ve sineğin yanıtını tüm telemetri/ışıma değerleriyle Türkçe tercüme edecektir.
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Bottom Neural Event Stream -->
-  <div class="bottom-stream">
-    <div class="stream-log">
-      <span class="stream-tag green" id="log-tag">BİYO-OTONOM</span>
-      <span id="log-text">Central Complex (EB E-PG nöronları) doğal yönelim aktivasyon dalgası üretiyor...</span>
-    </div>
-    <div style="color:#64748b; font-size:0.7rem;">
-      Sağ üstteki beyin sineğin kafa açısı, yatış (roll) ve pusula dalgalarıyla birebir senkronize hareket eder
     </div>
   </div>
 
@@ -1783,7 +1837,19 @@
       }
     }
 
-    window.switchPresetTab = function(tabName) {
+        window.toggleTerminalMinimize = function() {
+      const term = document.getElementById('dialogue-terminal');
+      const btn = document.getElementById('btn-toggle-terminal');
+      if (!term) return;
+      term.classList.toggle('minimized');
+      if (term.classList.contains('minimized')) {
+        if (btn) btn.innerHTML = '⛶ Büyüt';
+      } else {
+        if (btn) btn.innerHTML = '➖ Küçült';
+      }
+    };
+
+window.switchPresetTab = function(tabName) {
       const qGroup = document.getElementById('preset-questions-group');
       const cGroup = document.getElementById('preset-commands-group');
       const btnQ = document.getElementById('tab-btn-questions');
